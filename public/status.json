@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T21:05:16.306Z",
+  "generated_at": "2026-04-24T21:06:08.357Z",
   "projects": [
     {
       "name": "Schola",
@@ -11,7 +11,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -32,7 +32,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -53,7 +53,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -74,7 +74,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -95,7 +95,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -116,7 +116,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -137,7 +137,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -158,7 +158,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -179,7 +179,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -200,7 +200,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -221,7 +221,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:16.000Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -242,7 +242,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:16.000Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -263,7 +263,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:16.000Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -284,7 +284,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:16.000Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -305,7 +305,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:16.000Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -326,7 +326,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:16.000Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
@@ -347,7 +347,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:05:16.000Z",
+        "checked_at": "2026-04-24T21:06:06.995Z",
         "checks": {},
         "version": null
       },
