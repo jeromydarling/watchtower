@@ -37,12 +37,20 @@ jobs:
           git config user.name  "watchtower-bot"
           git config user.email "watchtower@users.noreply.github.com"
           git add public/status.json alerts/outbox/ 2>/dev/null || true
-          if ! git diff --cached --quiet; then
-            git commit -m "chore(watchtower): update status [skip ci]"
-            git push
-          else
+          if git diff --cached --quiet; then
             echo "No changes to commit."
+            exit 0
           fi
+          git commit -m "chore(watchtower): update status [skip ci]"
+          # Retry with rebase on conflict (other check runs can push concurrently).
+          for i in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            echo "Push rejected (attempt $i), rebasing and retrying..."
+            git pull --rebase origin main || true
+            sleep $((RANDOM % 5 + 1))
+          done
+          echo "Giving up after 5 push attempts."
+          exit 1
 
   # Deploy the dashboard to GitHub Pages whenever status.json changes.
   deploy:
