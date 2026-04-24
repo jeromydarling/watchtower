@@ -1,0 +1,41 @@
+name: Watchtower quota check
+
+# Once a day at 13:17 UTC (8:17am CT) — off-peak.
+on:
+  schedule:
+    - cron: "17 13 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci --no-audit --no-fund
+      - name: Run quota check
+        env:
+          SUPABASE_URL: ${{ secrets.WATCHTOWER_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.WATCHTOWER_SUPABASE_SERVICE_ROLE_KEY }}
+          SUPABASE_PAT: ${{ secrets.WATCHTOWER_SUPABASE_PAT }}
+        run: node --experimental-strip-types scripts/quota-check.ts
+      - name: Commit alerts
+        run: |
+          git config user.name  "watchtower-bot"
+          git config user.email "watchtower@users.noreply.github.com"
+          git add alerts/outbox/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No alerts generated."
+            exit 0
+          fi
+          git commit -m "chore(watchtower): quota alert [skip ci]"
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main || true
+          done
+          exit 1

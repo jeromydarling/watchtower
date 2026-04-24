@@ -77,6 +77,14 @@
       font-size: 13px; color: var(--fg-dim); margin-top: 2px;
     }
     .meta-row b { color: var(--fg); font-weight: 600; }
+    .meta-row .warn { color: var(--warn); font-weight: 600; }
+    .meta-row .bad  { color: var(--bad);  font-weight: 600; }
+    .heads-up {
+      background: color-mix(in srgb, var(--warn) 10%, var(--panel));
+      border: 1px solid color-mix(in srgb, var(--warn) 35%, var(--border));
+      padding: 10px 14px; border-radius: var(--radius);
+      margin-bottom: 16px; font-size: 14px;
+    }
     details { margin-top: 6px; }
     summary { cursor: pointer; color: var(--fg-dim); font-size: 13px; }
     .checks { margin: 8px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px; }
@@ -97,6 +105,7 @@
   </header>
 
   <div id="banner"></div>
+  <div id="headsup"></div>
   <main id="grid">
     <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
   </main>
@@ -117,6 +126,23 @@
       return d.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" });
     };
     const fmtPct = (n) => n == null ? "—" : `${Number(n).toFixed(2)}%`;
+
+    const sslCell = (p) => {
+      const d = p.current.ssl_days_until_expiry;
+      if (d == null) return `<span>TLS <b>—</b></span>`;
+      const cls = d < 7 ? "bad" : d < 30 ? "warn" : "";
+      return `<span>TLS <b class="${cls}">${d}d</b></span>`;
+    };
+    const dnsCell = (p) => {
+      const ok = p.current.dns_ok;
+      if (ok == null) return "";
+      return `<span>DNS <b class="${ok ? '' : 'bad'}">${ok ? 'ok' : 'fail'}</b></span>`;
+    };
+    const deployCell = (p) => {
+      const t = p.current.last_deploy_at;
+      if (!t) return "";
+      return `<span>deployed <b>${fmtTime(t)}</b></span>`;
+    };
 
     const statusSentence = (p) => {
       const s = p.current.status;
@@ -155,6 +181,22 @@
         banner.innerHTML = `<div class="banner bad">⚠️ <strong>${bits.join(", ")}.</strong> See below.</div>`;
       }
 
+      // Heads-up strip for SSL and DNS warnings
+      const sslSoon = projs.filter(p => p.current.ssl_days_until_expiry != null && p.current.ssl_days_until_expiry < 30 && p.current.ssl_days_until_expiry >= 0);
+      const dnsFail = projs.filter(p => p.current.dns_ok === false);
+      const headsEl = document.getElementById("headsup");
+      const headsBits = [];
+      if (sslSoon.length) {
+        const list = sslSoon.map(p => `${p.name} (${p.current.ssl_days_until_expiry}d)`).join(", ");
+        headsBits.push(`🔒 TLS cert expiring soon: ${list}.`);
+      }
+      if (dnsFail.length) {
+        headsBits.push(`🌐 DNS not resolving: ${dnsFail.map(p => p.name).join(", ")}.`);
+      }
+      headsEl.innerHTML = headsBits.length
+        ? `<div class="heads-up">${headsBits.join("<br>")}</div>`
+        : "";
+
       // Sort: down first, then degraded, then critical OK, then rest
       const order = { down: 0, degraded: 1, unconfigured: 2, ok: 3 };
       projs.sort((a, b) => {
@@ -189,6 +231,11 @@
               <span>24h <b>${fmtPct(p.uptime.last_24h)}</b></span>
               <span>7d <b>${fmtPct(p.uptime.last_7d)}</b></span>
               <span>incidents this week <b>${p.uptime.incidents_7d}</b></span>
+            </div>
+            <div class="meta-row">
+              ${sslCell(p)}
+              ${dnsCell(p)}
+              ${deployCell(p)}
             </div>
             ${checksHtml}
           </article>`;

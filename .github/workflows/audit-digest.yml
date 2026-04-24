@@ -1,0 +1,43 @@
+name: Watchtower weekly audit digest
+
+# Mondays at 14:17 UTC (9:17am CT) — re-scans deferred audit patterns
+# (old std, missing CORS, webhooks without verify_jwt=false, >50KB functions).
+on:
+  schedule:
+    - cron: "17 14 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci --no-audit --no-fund
+      - name: Run audit digest
+        env:
+          GITHUB_TOKEN: ${{ secrets.WATCHTOWER_MONITORED_REPOS_TOKEN }}
+          SUPABASE_URL: ${{ secrets.WATCHTOWER_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.WATCHTOWER_SUPABASE_SERVICE_ROLE_KEY }}
+        run: node --experimental-strip-types scripts/audit-digest.ts
+      - name: Commit digest + alerts
+        run: |
+          git config user.name  "watchtower-bot"
+          git config user.email "watchtower@users.noreply.github.com"
+          git add alerts/outbox/ audit-history/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No digest output."
+            exit 0
+          fi
+          git commit -m "chore(watchtower): weekly audit digest [skip ci]"
+          for i in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main || true
+            sleep $((RANDOM % 5 + 1))
+          done
+          exit 1

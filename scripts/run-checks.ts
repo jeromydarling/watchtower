@@ -3,16 +3,20 @@
  *
  * Runs every 5 minutes via GitHub Actions.
  * For each project in projects.json:
- *   1. Hit its /health endpoint with a 10s timeout
- *   2. Record the result in Supabase
- *   3. If the status flipped (healthy <-> unhealthy), drop an alert file
- *      in alerts/outbox/ so the Computer task can email it
- *   4. Rebuild public/status.json so the dashboard stays fresh
+ *   1. Ping its health_url (any 2xx = ok, or Watchtower /health JSON shape if present)
+ *   2. Verify DNS resolves for its hostname
+ *   3. Inspect its TLS cert and flag if expiring soon (< 14 days)
+ *   4. Fetch /version if present, otherwise latest GitHub commit timestamp
+ *   5. Record everything to Supabase
+ *   6. If health status flipped, drop an alert file for the email cron
+ *   7. Rebuild public/status.json so the dashboard stays fresh
  */
 import { createClient } from "@supabase/supabase-js";
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { promises as dns } from "node:dns";
+import tls from "node:tls";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -42,6 +46,14 @@ type CheckResult = {
   version: string | null;
   error: string | null;
   checked_at: string;
+  // New in phase 2
+  dns_ok: boolean | null;
+  dns_error: string | null;
+  ssl_days_until_expiry: number | null;
+  ssl_issuer: string | null;
+  ssl_error: string | null;
+  last_deploy_at: string | null;
+  last_deploy_source: string | null;   // "version_endpoint" | "github" | null
 };
 
 const CONFIG = JSON.parse(readFileSync(resolve(ROOT, "projects.json"), "utf-8")) as {
@@ -50,6 +62,7 @@ const CONFIG = JSON.parse(readFileSync(resolve(ROOT, "projects.json"), "utf-8"))
 
 const SUPABASE_URL = process.env.SUPABASE_URL!;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN || process.env.MONITORED_REPOS_TOKEN || "";
 
 if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
   console.error("Missing SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY env vars.");
@@ -60,55 +73,199 @@ const sb = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
   auth: { persistSession: false },
 });
 
+/** Resolve DNS A record for a hostname. */
+async function checkDns(hostname: string): Promise<{ ok: boolean; error: string | null }> {
+  try {
+    const addrs = await dns.resolve4(hostname);
+    return { ok: addrs.length > 0, error: null };
+  } catch (err: any) {
+    // Fall back to any resolve (AAAA, CNAME-chased)
+    try {
+      await dns.lookup(hostname);
+      return { ok: true, error: null };
+    } catch (err2: any) {
+      return { ok: false, error: err2.code || err2.message || String(err2) };
+    }
+  }
+}
+
+/** Inspect TLS cert and return days until expiry. */
+async function checkSsl(hostname: string): Promise<{
+  days: number | null;
+  issuer: string | null;
+  error: string | null;
+}> {
+  return new Promise((resolveP) => {
+    const timer = setTimeout(() => {
+      try { socket.destroy(); } catch {}
+      resolveP({ days: null, issuer: null, error: "TLS handshake timeout" });
+    }, 8000);
+    const socket = tls.connect({
+      host: hostname,
+      port: 443,
+      servername: hostname,
+      rejectUnauthorized: false, // we want to INSPECT even invalid certs
+    }, () => {
+      try {
+        const cert = socket.getPeerCertificate();
+        if (!cert || !cert.valid_to) {
+          clearTimeout(timer);
+          socket.end();
+          return resolveP({ days: null, issuer: null, error: "No certificate returned" });
+        }
+        const expiry = new Date(cert.valid_to).getTime();
+        const days = Math.floor((expiry - Date.now()) / (24 * 60 * 60 * 1000));
+        const issuer = cert.issuer?.O || cert.issuer?.CN || null;
+        clearTimeout(timer);
+        socket.end();
+        resolveP({ days, issuer, error: null });
+      } catch (err: any) {
+        clearTimeout(timer);
+        try { socket.destroy(); } catch {}
+        resolveP({ days: null, issuer: null, error: err.message || String(err) });
+      }
+    });
+    socket.on("error", (err: any) => {
+      clearTimeout(timer);
+      resolveP({ days: null, issuer: null, error: err.code || err.message || String(err) });
+    });
+  });
+}
+
+/** Try /version on the same origin as health_url. */
+async function tryVersionEndpoint(healthUrl: string): Promise<{
+  deployed_at: string | null;
+  version: string | null;
+}> {
+  try {
+    const u = new URL(healthUrl);
+    const versionUrl = `${u.origin}/version`;
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 4000);
+    const res = await fetch(versionUrl, { signal: ctrl.signal });
+    clearTimeout(timer);
+    if (!res.ok) return { deployed_at: null, version: null };
+    const text = await res.text();
+    try {
+      const j = JSON.parse(text);
+      return {
+        deployed_at: j.deployed_at || j.deployedAt || j.timestamp || null,
+        version: j.version || j.sha || j.commit || null,
+      };
+    } catch {
+      return { deployed_at: null, version: null };
+    }
+  } catch {
+    return { deployed_at: null, version: null };
+  }
+}
+
+/** Fall back to GitHub's latest commit on main. */
+async function githubLatestCommit(repo: string): Promise<string | null> {
+  if (!repo) return null;
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${repo}/commits?per_page=1&sha=main`,
+      {
+        headers: {
+          "user-agent": "Watchtower/1.0",
+          "accept": "application/vnd.github+json",
+          ...(GITHUB_TOKEN ? { "authorization": `Bearer ${GITHUB_TOKEN}` } : {}),
+        },
+      }
+    );
+    if (!res.ok) return null;
+    const arr = await res.json() as any[];
+    return arr?.[0]?.commit?.author?.date || arr?.[0]?.commit?.committer?.date || null;
+  } catch {
+    return null;
+  }
+}
+
 async function checkOne(p: Project): Promise<CheckResult> {
   const now = new Date().toISOString();
+  const base: CheckResult = {
+    slug: p.slug, name: p.name, status: "unconfigured",
+    http_status: null, latency_ms: null, checks: {}, version: null,
+    error: null, checked_at: now,
+    dns_ok: null, dns_error: null,
+    ssl_days_until_expiry: null, ssl_issuer: null, ssl_error: null,
+    last_deploy_at: null, last_deploy_source: null,
+  };
+
   if (!p.health_url) {
-    return {
-      slug: p.slug, name: p.name, status: "unconfigured",
-      http_status: null, latency_ms: null, checks: {}, version: null,
-      error: "No health_url configured", checked_at: now,
-    };
+    // Even unconfigured projects get last_deploy from GitHub
+    base.last_deploy_at = await githubLatestCommit(p.repo);
+    if (base.last_deploy_at) base.last_deploy_source = "github";
+    base.error = "No health_url configured";
+    return base;
   }
+
+  const hostname = new URL(p.health_url).hostname;
+
+  // Fire DNS + SSL + HTTP + version checks in parallel
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), 10_000);
   const start = Date.now();
-  try {
-    const res = await fetch(p.health_url, {
-      signal: ctrl.signal,
-      headers: { "user-agent": "Watchtower/1.0 (+https://github.com/jeromydarling/watchtower)" },
-    });
+  const httpPromise = fetch(p.health_url, {
+    signal: ctrl.signal,
+    headers: { "user-agent": "Watchtower/1.0 (+https://github.com/jeromydarling/watchtower)" },
+  }).then(async (res) => {
     const latency = Date.now() - start;
     const text = await res.text();
     let body: HealthResp | null = null;
     try { body = JSON.parse(text) as HealthResp; } catch { /* non-JSON body */ }
+    return { res, latency, body };
+  });
 
-    // If the response is a Watchtower /health JSON doc, use its status field.
-    // Otherwise (plain web page, etc.) treat any 2xx as "ok" and 4xx/5xx as "down".
-    const hasHealthShape = body && typeof body.status === "string";
-    const status: CheckResult["status"] = hasHealthShape
-      ? (res.ok && body!.status === "ok" ? "ok"
-        : res.ok && body!.status === "degraded" ? "degraded"
-        : "down")
-      : (res.ok ? "ok" : "down");
+  const [dnsRes, sslRes, versionRes, httpRes] = await Promise.all([
+    checkDns(hostname).catch((e) => ({ ok: false, error: String(e) })),
+    checkSsl(hostname).catch((e) => ({ days: null, issuer: null, error: String(e) })),
+    tryVersionEndpoint(p.health_url).catch(() => ({ deployed_at: null, version: null })),
+    httpPromise.catch((err: any) => ({ err } as any)),
+  ]);
+  clearTimeout(timer);
 
-    return {
-      slug: p.slug, name: p.name, status,
-      http_status: res.status, latency_ms: latency,
-      checks: body?.checks ?? {}, version: body?.version ?? null,
-      error: res.ok ? null : `HTTP ${res.status}`,
-      checked_at: now,
-    };
-  } catch (err: any) {
-    return {
-      slug: p.slug, name: p.name, status: "down",
-      http_status: null, latency_ms: Date.now() - start,
-      checks: {}, version: null,
-      error: err?.name === "AbortError" ? "Timed out after 10s" : (err?.message ?? String(err)),
-      checked_at: now,
-    };
-  } finally {
-    clearTimeout(timer);
+  base.dns_ok = dnsRes.ok;
+  base.dns_error = dnsRes.error;
+  base.ssl_days_until_expiry = sslRes.days;
+  base.ssl_issuer = sslRes.issuer;
+  base.ssl_error = sslRes.error;
+
+  // Deploy tracking: prefer /version, fall back to GitHub
+  if (versionRes.deployed_at) {
+    base.last_deploy_at = versionRes.deployed_at;
+    base.last_deploy_source = "version_endpoint";
+  } else {
+    base.last_deploy_at = await githubLatestCommit(p.repo);
+    if (base.last_deploy_at) base.last_deploy_source = "github";
   }
+
+  if ("err" in httpRes && httpRes.err) {
+    base.status = "down";
+    base.latency_ms = Date.now() - start;
+    base.error = httpRes.err?.name === "AbortError"
+      ? "Timed out after 10s"
+      : (httpRes.err?.message ?? String(httpRes.err));
+    return base;
+  }
+
+  const { res, latency, body } = httpRes as any;
+  const hasHealthShape = body && typeof body.status === "string";
+  const httpStatus: CheckResult["status"] = hasHealthShape
+    ? (res.ok && body.status === "ok" ? "ok"
+      : res.ok && body.status === "degraded" ? "degraded"
+      : "down")
+    : (res.ok ? "ok" : "down");
+
+  base.status = httpStatus;
+  base.http_status = res.status;
+  base.latency_ms = latency;
+  base.checks = body?.checks ?? {};
+  base.version = versionRes.version ?? body?.version ?? null;
+  base.error = res.ok ? null : `HTTP ${res.status}`;
+
+  return base;
 }
 
 /** Build a plain-English summary of the change for the email. */
@@ -122,11 +279,19 @@ function humanize(p: Project, prev: string | null, curr: CheckResult): string {
     const detail = failing.length
       ? `Failing subsystems: ${failing.map(([k, v]) => `${k} (${v})`).join(", ")}.`
       : "";
+    const sslWarning = curr.ssl_days_until_expiry !== null && curr.ssl_days_until_expiry < 14
+      ? `Heads up: TLS cert expires in ${curr.ssl_days_until_expiry} days.`
+      : "";
+    const deployContext = curr.last_deploy_at
+      ? `Last deploy: ${new Date(curr.last_deploy_at).toLocaleString("en-US", { timeZone: "America/Chicago" })} Central (${curr.last_deploy_source}).`
+      : "";
     return [
       `${p.name} just went down.`,
       `Watchtower tried to reach it at ${when} Central and got: ${reason}.`,
       detail,
-      p.critical ? "This is a CRITICAL project." : "This project is marked non-critical.",
+      sslWarning,
+      deployContext,
+      p.critical ? "This is a TIER 1 project." : "This project is tier 2.",
       `Repo: https://github.com/${p.repo}`,
     ].filter(Boolean).join("\n\n");
   }
@@ -152,6 +317,9 @@ async function main() {
       version: r.version,
       error: r.error,
       checked_at: r.checked_at,
+      dns_ok: r.dns_ok,
+      ssl_days_until_expiry: r.ssl_days_until_expiry,
+      last_deploy_at: r.last_deploy_at,
     }))
   );
   if (insErr) console.error("Failed to insert checks:", insErr.message);
@@ -159,8 +327,8 @@ async function main() {
   // 2) Compare against the most recent prior status per slug
   const { data: prev } = await sb
     .from("current_status")
-    .select("slug,status");
-  const prevMap = new Map((prev ?? []).map((r: any) => [r.slug, r.status]));
+    .select("slug,status,ssl_days_until_expiry");
+  const prevMap = new Map((prev ?? []).map((r: any) => [r.slug, r]));
 
   mkdirSync(resolve(ROOT, "alerts/outbox"), { recursive: true });
   const outboxExisting = new Set(readdirSync(resolve(ROOT, "alerts/outbox")));
@@ -168,11 +336,22 @@ async function main() {
   const flips: Array<{ project: Project; prev: string | null; curr: CheckResult }> = [];
   for (const r of results) {
     const p = CONFIG.projects.find((x) => x.slug === r.slug)!;
-    const previousStatus = prevMap.get(r.slug) ?? null;
-    const isFlip =
+    const prevRec = prevMap.get(r.slug) as any | undefined;
+    const previousStatus: string | null = prevRec?.status ?? null;
+    const prevSslDays: number | null = prevRec?.ssl_days_until_expiry ?? null;
+
+    const isStatusFlip =
       (previousStatus === "ok" && r.status !== "ok" && r.status !== "unconfigured") ||
       (previousStatus && previousStatus !== "ok" && r.status === "ok");
-    if (isFlip) {
+
+    // New: SSL expiry alert — fires once when cert first crosses under 14 days
+    const isSslFlip =
+      r.ssl_days_until_expiry !== null &&
+      r.ssl_days_until_expiry < 14 &&
+      r.ssl_days_until_expiry >= 0 &&
+      (prevSslDays === null || prevSslDays >= 14);
+
+    if (isStatusFlip) {
       flips.push({ project: p, prev: previousStatus, curr: r });
       const fname = `${r.checked_at.replace(/[:.]/g, "-")}-${r.slug}-${r.status}.json`;
       if (!outboxExisting.has(fname)) {
@@ -186,6 +365,20 @@ async function main() {
         }, null, 2));
       }
     }
+
+    if (isSslFlip) {
+      const fname = `${r.checked_at.replace(/[:.]/g, "-")}-${r.slug}-ssl-expiring.json`;
+      if (!outboxExisting.has(fname)) {
+        writeFileSync(resolve(ROOT, "alerts/outbox", fname), JSON.stringify({
+          kind: "ssl_expiring",
+          project: p,
+          prev_status: previousStatus,
+          current: r,
+          narrative: `${p.name}'s TLS certificate expires in ${r.ssl_days_until_expiry} days (issuer: ${r.ssl_issuer ?? "unknown"}). Renew before expiry to avoid downtime.`,
+          urgent: p.critical,
+        }, null, 2));
+      }
+    }
   }
 
   // 3) Upsert current_status for each slug
@@ -196,6 +389,11 @@ async function main() {
       last_checked_at: r.checked_at,
       last_latency_ms: r.latency_ms,
       last_error: r.error,
+      dns_ok: r.dns_ok,
+      ssl_days_until_expiry: r.ssl_days_until_expiry,
+      ssl_issuer: r.ssl_issuer,
+      last_deploy_at: r.last_deploy_at,
+      last_deploy_source: r.last_deploy_source,
     })),
     { onConflict: "slug" }
   );
@@ -223,6 +421,11 @@ async function main() {
           checked_at: r.checked_at,
           checks: r.checks,
           version: r.version,
+          dns_ok: r.dns_ok,
+          ssl_days_until_expiry: r.ssl_days_until_expiry,
+          ssl_issuer: r.ssl_issuer,
+          last_deploy_at: r.last_deploy_at,
+          last_deploy_source: r.last_deploy_source,
         },
         uptime: {
           last_24h: u?.uptime_24h ?? null,

@@ -18,35 +18,35 @@
     {
       "name": "Hortus",
       "slug": "hortus",
-      "repo": "jeromydarling/hortus",
+      "repo": "jeromydarling/hortus-claude-s-garden",
       "health_url": "https://hortusapp.com",
       "critical": true
     },
     {
       "name": "Refugium",
       "slug": "refugium",
-      "repo": "jeromydarling/refugium",
+      "repo": "jeromydarling/refugium-a261235f",
       "health_url": "https://jeromydarling.github.io/refugium/",
       "critical": false
     },
     {
       "name": "Resurrectio",
       "slug": "resurrectio",
-      "repo": "jeromydarling/resurrectio",
+      "repo": "jeromydarling/resurrectio-3d07f98c",
       "health_url": "https://resurrectio.lovable.app",
       "critical": false
     },
     {
       "name": "Transitus",
       "slug": "transitus",
-      "repo": "jeromydarling/transitus",
+      "repo": "jeromydarling/transitus-be0eceba",
       "health_url": "https://jeromydarling.github.io/transitus/",
       "critical": false
     },
     {
       "name": "Vigilia",
       "slug": "vigilia",
-      "repo": "jeromydarling/vigilia",
+      "repo": "jeromydarling/vigilia-ffa3c410",
       "health_url": "https://vigilia.lovable.app",
       "critical": false
     },
