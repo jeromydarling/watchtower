@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-04-24T21:06:08.357Z",
+  "generated_at": "2026-04-24T21:26:19.793Z",
   "projects": [
     {
       "name": "Schola",
       "slug": "theschola",
       "repo": "jeromydarling/theschola",
       "critical": true,
-      "health_url": null,
+      "health_url": "https://theschola.lovable.app",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 1218,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.207Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -27,19 +27,19 @@
       "slug": "thecros",
       "repo": "jeromydarling/thecros",
       "critical": true,
-      "health_url": null,
+      "health_url": "https://thecros.lovable.app",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 1533,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.219Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -48,19 +48,19 @@
       "slug": "hortus",
       "repo": "jeromydarling/hortus",
       "critical": true,
-      "health_url": null,
+      "health_url": "https://hortusapp.com",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 996,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.220Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -69,19 +69,19 @@
       "slug": "refugium",
       "repo": "jeromydarling/refugium",
       "critical": false,
-      "health_url": null,
+      "health_url": "https://jeromydarling.github.io/refugium/",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 144,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.221Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -90,19 +90,19 @@
       "slug": "resurrectio",
       "repo": "jeromydarling/resurrectio",
       "critical": false,
-      "health_url": null,
+      "health_url": "https://resurrectio.lovable.app",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 682,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.223Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -111,19 +111,19 @@
       "slug": "transitus",
       "repo": "jeromydarling/transitus",
       "critical": false,
-      "health_url": null,
+      "health_url": "https://jeromydarling.github.io/transitus/",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 160,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.224Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -132,19 +132,19 @@
       "slug": "vigilia",
       "repo": "jeromydarling/vigilia",
       "critical": false,
-      "health_url": null,
+      "health_url": "https://vigilia.lovable.app",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 910,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.225Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -153,19 +153,19 @@
       "slug": "communis",
       "repo": "jeromydarling/communis-b47839b1",
       "critical": false,
-      "health_url": null,
+      "health_url": "https://communis.lovable.app",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 954,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.226Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -174,19 +174,19 @@
       "slug": "propria",
       "repo": "jeromydarling/propria-1e798e8e",
       "critical": false,
-      "health_url": null,
+      "health_url": "https://propria.lovable.app",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 1304,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.227Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -195,19 +195,19 @@
       "slug": "cormundum",
       "repo": "jeromydarling/cormundum",
       "critical": false,
-      "health_url": null,
+      "health_url": "https://cormundum.lovable.app",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 809,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.229Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -216,19 +216,19 @@
       "slug": "bitoku",
       "repo": "jeromydarling/bitoku",
       "critical": false,
-      "health_url": null,
+      "health_url": "https://bitoku.lovable.app",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 1330,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.230Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -237,19 +237,19 @@
       "slug": "rehearso",
       "repo": "jeromydarling/rehearso",
       "critical": false,
-      "health_url": null,
+      "health_url": "https://rehearso.lovable.app",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 1436,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.231Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -258,19 +258,19 @@
       "slug": "heritage-kitchen",
       "repo": "jeromydarling/heritage-kitchen",
       "critical": false,
-      "health_url": null,
+      "health_url": "https://heritage-kitchen-app.lovable.app",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 1050,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.231Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -279,19 +279,19 @@
       "slug": "via-publica",
       "repo": "jeromydarling/via-publica",
       "critical": false,
-      "health_url": null,
+      "health_url": "https://viapublica.com",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 1087,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.232Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -300,19 +300,19 @@
       "slug": "fabrica-forge",
       "repo": "jeromydarling/fabrica-forge",
       "critical": false,
-      "health_url": null,
+      "health_url": "https://thefabrica.lovable.app/",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 1059,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.232Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     },
@@ -326,7 +326,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "checked_at": "2026-04-24T21:26:17.233Z",
         "checks": {},
         "version": null
       },
@@ -342,19 +342,19 @@
       "slug": "vrtmethod",
       "repo": "jeromydarling/vrtmethod",
       "critical": false,
-      "health_url": null,
+      "health_url": "https://vrtmethod.lovable.app",
       "current": {
-        "status": "unconfigured",
-        "latency_ms": null,
-        "error": "No health_url configured",
-        "checked_at": "2026-04-24T21:06:06.995Z",
+        "status": "ok",
+        "latency_ms": 1096,
+        "error": null,
+        "checked_at": "2026-04-24T21:26:17.233Z",
         "checks": {},
         "version": null
       },
       "uptime": {
-        "last_24h": 0,
-        "last_7d": 0,
-        "last_30d": 0,
+        "last_24h": 33.33,
+        "last_7d": 33.33,
+        "last_30d": 33.33,
         "incidents_7d": 0
       }
     }

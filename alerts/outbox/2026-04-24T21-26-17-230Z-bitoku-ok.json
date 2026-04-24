@@ -1,0 +1,24 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Bitoku",
+    "slug": "bitoku",
+    "repo": "jeromydarling/bitoku",
+    "health_url": "https://bitoku.lovable.app",
+    "critical": false
+  },
+  "prev_status": "unconfigured",
+  "current": {
+    "slug": "bitoku",
+    "name": "Bitoku",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 1330,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-04-24T21:26:17.230Z"
+  },
+  "narrative": "Bitoku is back up as of Apr 24, 2026, 4:26 PM Central. No action needed.",
+  "urgent": false
+}

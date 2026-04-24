@@ -1,0 +1,24 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Propria",
+    "slug": "propria",
+    "repo": "jeromydarling/propria-1e798e8e",
+    "health_url": "https://propria.lovable.app",
+    "critical": false
+  },
+  "prev_status": "unconfigured",
+  "current": {
+    "slug": "propria",
+    "name": "Propria",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 1304,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-04-24T21:26:17.227Z"
+  },
+  "narrative": "Propria is back up as of Apr 24, 2026, 4:26 PM Central. No action needed.",
+  "urgent": false
+}
