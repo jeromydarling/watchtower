@@ -101,7 +101,7 @@
     <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
   </main>
   <footer>
-    Checks run every 5 minutes. Email alerts fire immediately for critical projects.
+    Checks run every 5 minutes. Email alerts fire immediately for tier 1 projects.
     <br>
     <a href="https://github.com/jeromydarling/watchtower">Source →</a>
   </footer>
@@ -181,7 +181,7 @@
             <div class="card-head">
               <span class="dot ${s}" aria-hidden="true"></span>
               <span class="name">${p.name}</span>
-              ${p.critical ? '<span class="pill crit">critical</span>' : '<span class="pill">standard</span>'}
+              ${p.critical ? '<span class="pill crit">tier 1</span>' : '<span class="pill">tier 2</span>'}
             </div>
             <div class="status-line ${s === 'down' ? 'bad' : ''}">${line}</div>
             <div class="meta-row">
