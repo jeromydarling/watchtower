@@ -82,10 +82,14 @@ async function checkOne(p: Project): Promise<CheckResult> {
     let body: HealthResp | null = null;
     try { body = JSON.parse(text) as HealthResp; } catch { /* non-JSON body */ }
 
-    const status: CheckResult["status"] =
-      res.ok && body?.status === "ok" ? "ok" :
-      res.ok && body?.status === "degraded" ? "degraded" :
-      "down";
+    // If the response is a Watchtower /health JSON doc, use its status field.
+    // Otherwise (plain web page, etc.) treat any 2xx as "ok" and 4xx/5xx as "down".
+    const hasHealthShape = body && typeof body.status === "string";
+    const status: CheckResult["status"] = hasHealthShape
+      ? (res.ok && body!.status === "ok" ? "ok"
+        : res.ok && body!.status === "degraded" ? "degraded"
+        : "down")
+      : (res.ok ? "ok" : "down");
 
     return {
       slug: p.slug, name: p.name, status,

@@ -1,22 +1,124 @@
 {
   "$schema": "./schemas/projects.schema.json",
   "projects": [
-    { "name": "Schola",          "slug": "theschola",            "repo": "jeromydarling/theschola",            "health_url": "", "critical": true  },
-    { "name": "CROS",            "slug": "thecros",              "repo": "jeromydarling/thecros",              "health_url": "", "critical": true  },
-    { "name": "Hortus",          "slug": "hortus",               "repo": "jeromydarling/hortus",               "health_url": "", "critical": true  },
-    { "name": "Refugium",        "slug": "refugium",             "repo": "jeromydarling/refugium",             "health_url": "", "critical": false },
-    { "name": "Resurrectio",     "slug": "resurrectio",          "repo": "jeromydarling/resurrectio",          "health_url": "", "critical": false },
-    { "name": "Transitus",       "slug": "transitus",            "repo": "jeromydarling/transitus",            "health_url": "", "critical": false },
-    { "name": "Vigilia",         "slug": "vigilia",              "repo": "jeromydarling/vigilia",              "health_url": "", "critical": false },
-    { "name": "Communis",        "slug": "communis",             "repo": "jeromydarling/communis-b47839b1",    "health_url": "", "critical": false },
-    { "name": "Propria",         "slug": "propria",              "repo": "jeromydarling/propria-1e798e8e",     "health_url": "", "critical": false },
-    { "name": "Cormundum",       "slug": "cormundum",            "repo": "jeromydarling/cormundum",            "health_url": "", "critical": false },
-    { "name": "Bitoku",          "slug": "bitoku",               "repo": "jeromydarling/bitoku",               "health_url": "", "critical": false },
-    { "name": "Rehearso",        "slug": "rehearso",             "repo": "jeromydarling/rehearso",             "health_url": "", "critical": false },
-    { "name": "Heritage Kitchen","slug": "heritage-kitchen",     "repo": "jeromydarling/heritage-kitchen",     "health_url": "", "critical": false },
-    { "name": "Via Publica",     "slug": "via-publica",          "repo": "jeromydarling/via-publica",          "health_url": "", "critical": false },
-    { "name": "Fabrica Forge",   "slug": "fabrica-forge",        "repo": "jeromydarling/fabrica-forge",        "health_url": "", "critical": false },
-    { "name": "Catholic Insurance","slug": "catholic-insurance", "repo": "jeromydarling/catholic-insurance",   "health_url": "", "critical": false },
-    { "name": "VRT Method",      "slug": "vrtmethod",            "repo": "jeromydarling/vrtmethod",            "health_url": "", "critical": false }
+    {
+      "name": "Schola",
+      "slug": "theschola",
+      "repo": "jeromydarling/theschola",
+      "health_url": "https://theschola.lovable.app",
+      "critical": true
+    },
+    {
+      "name": "CROS",
+      "slug": "thecros",
+      "repo": "jeromydarling/thecros",
+      "health_url": "https://thecros.lovable.app",
+      "critical": true
+    },
+    {
+      "name": "Hortus",
+      "slug": "hortus",
+      "repo": "jeromydarling/hortus",
+      "health_url": "https://hortusapp.com",
+      "critical": true
+    },
+    {
+      "name": "Refugium",
+      "slug": "refugium",
+      "repo": "jeromydarling/refugium",
+      "health_url": "https://jeromydarling.github.io/refugium/",
+      "critical": false
+    },
+    {
+      "name": "Resurrectio",
+      "slug": "resurrectio",
+      "repo": "jeromydarling/resurrectio",
+      "health_url": "https://resurrectio.lovable.app",
+      "critical": false
+    },
+    {
+      "name": "Transitus",
+      "slug": "transitus",
+      "repo": "jeromydarling/transitus",
+      "health_url": "https://jeromydarling.github.io/transitus/",
+      "critical": false
+    },
+    {
+      "name": "Vigilia",
+      "slug": "vigilia",
+      "repo": "jeromydarling/vigilia",
+      "health_url": "https://vigilia.lovable.app",
+      "critical": false
+    },
+    {
+      "name": "Communis",
+      "slug": "communis",
+      "repo": "jeromydarling/communis-b47839b1",
+      "health_url": "https://communis.lovable.app",
+      "critical": false
+    },
+    {
+      "name": "Propria",
+      "slug": "propria",
+      "repo": "jeromydarling/propria-1e798e8e",
+      "health_url": "https://propria.lovable.app",
+      "critical": false
+    },
+    {
+      "name": "Cormundum",
+      "slug": "cormundum",
+      "repo": "jeromydarling/cormundum",
+      "health_url": "https://cormundum.lovable.app",
+      "critical": false
+    },
+    {
+      "name": "Bitoku",
+      "slug": "bitoku",
+      "repo": "jeromydarling/bitoku",
+      "health_url": "https://bitoku.lovable.app",
+      "critical": false
+    },
+    {
+      "name": "Rehearso",
+      "slug": "rehearso",
+      "repo": "jeromydarling/rehearso",
+      "health_url": "https://rehearso.lovable.app",
+      "critical": false
+    },
+    {
+      "name": "Heritage Kitchen",
+      "slug": "heritage-kitchen",
+      "repo": "jeromydarling/heritage-kitchen",
+      "health_url": "https://heritage-kitchen-app.lovable.app",
+      "critical": false
+    },
+    {
+      "name": "Via Publica",
+      "slug": "via-publica",
+      "repo": "jeromydarling/via-publica",
+      "health_url": "https://viapublica.com",
+      "critical": false
+    },
+    {
+      "name": "Fabrica Forge",
+      "slug": "fabrica-forge",
+      "repo": "jeromydarling/fabrica-forge",
+      "health_url": "https://thefabrica.lovable.app/",
+      "critical": false
+    },
+    {
+      "name": "Catholic Insurance",
+      "slug": "catholic-insurance",
+      "repo": "jeromydarling/catholic-insurance",
+      "health_url": "",
+      "critical": false
+    },
+    {
+      "name": "VRT Method",
+      "slug": "vrtmethod",
+      "repo": "jeromydarling/vrtmethod",
+      "health_url": "https://vrtmethod.lovable.app",
+      "critical": false
+    }
   ]
 }
