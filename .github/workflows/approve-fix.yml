@@ -1,0 +1,27 @@
+name: Apply approved fixes
+
+# Triggered when an approval issue gets a 👍 reaction.
+# Issues are opened by the auto-fix-sweep workflow in monitored repos,
+# tagged `watchtower:awaiting-approval`. When you react thumbs-up, this
+# workflow checks out the referenced repo, applies the stored fix, and
+# opens a PR that it auto-merges.
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # poll every 15 min
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+      - name: Apply approved fixes
+        env:
+          GH_TOKEN: ${{ secrets.WATCHTOWER_MONITORED_REPOS_TOKEN }}
+        run: node --experimental-strip-types scripts/apply-approved.ts

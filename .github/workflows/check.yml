@@ -1,0 +1,66 @@
+name: Watchtower check loop
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # every 5 minutes
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "projects.json"
+      - "scripts/run-checks.ts"
+      - ".github/workflows/check.yml"
+
+concurrency:
+  group: watchtower-check
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # to commit public/status.json and alerts/outbox/*
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+      - run: npm install --omit=dev
+      - name: Run checks
+        env:
+          SUPABASE_URL: ${{ secrets.WATCHTOWER_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.WATCHTOWER_SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run check
+
+      - name: Commit status.json and alerts
+        run: |
+          git config user.name  "watchtower-bot"
+          git config user.email "watchtower@users.noreply.github.com"
+          git add public/status.json alerts/outbox/ 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(watchtower): update status [skip ci]"
+            git push
+          else
+            echo "No changes to commit."
+          fi
+
+  # Deploy the dashboard to GitHub Pages whenever status.json changes.
+  deploy:
+    needs: run
+    runs-on: ubuntu-latest
+    if: always()
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: public }
+      - id: deployment
+        uses: actions/deploy-pages@v4

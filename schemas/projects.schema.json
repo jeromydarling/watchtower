@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Watchtower projects config",
+  "type": "object",
+  "required": ["projects"],
+  "properties": {
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "slug", "repo"],
+        "properties": {
+          "name":       { "type": "string", "description": "Human-readable project name (shown on dashboard)" },
+          "slug":       { "type": "string", "description": "URL-safe identifier (lowercase, hyphens)" },
+          "repo":       { "type": "string", "description": "GitHub repo as owner/name" },
+          "health_url": { "type": "string", "description": "Full URL to the project's /health endpoint. Leave blank if not yet deployed." },
+          "critical":   { "type": "boolean", "description": "True if downtime should trigger immediate email (vs. daily digest)" }
+        }
+      }
+    }
+  }
+}

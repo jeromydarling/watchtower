@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f1115">
+  <meta name="color-scheme" content="dark light">
+  <title>Watchtower</title>
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🗼</text></svg>">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #161922;
+      --panel-2: #1c2030;
+      --fg: #e9ecf1;
+      --fg-dim: #9aa3b2;
+      --ok: #34d399;
+      --warn: #fbbf24;
+      --bad: #f87171;
+      --neutral: #64748b;
+      --border: #242937;
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f8fb; --panel: #ffffff; --panel-2: #f1f3f8;
+        --fg: #0f1115; --fg-dim: #5b6473; --border: #e3e7ef;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font: 16px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg); color: var(--fg);
+      min-height: 100dvh;
+      padding: max(env(safe-area-inset-top), 16px) 16px calc(env(safe-area-inset-bottom) + 32px);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+    header h1 { margin: 0; font-size: 22px; letter-spacing: -0.01em; }
+    header h1 .emoji { margin-right: 8px; }
+    header .meta { color: var(--fg-dim); font-size: 13px; }
+    .banner {
+      padding: 14px 16px; border-radius: var(--radius);
+      background: var(--panel); border: 1px solid var(--border);
+      margin-bottom: 16px; font-size: 15px;
+    }
+    .banner.ok  { border-color: color-mix(in srgb, var(--ok) 30%, var(--border)); }
+    .banner.bad { border-color: color-mix(in srgb, var(--bad) 40%, var(--border)); }
+    .banner strong { color: var(--fg); }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .card-head { display: flex; align-items: center; gap: 12px; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; flex: 0 0 auto; box-shadow: 0 0 0 3px color-mix(in srgb, currentColor 25%, transparent); }
+    .dot.ok { color: var(--ok); background: var(--ok); }
+    .dot.degraded { color: var(--warn); background: var(--warn); }
+    .dot.down { color: var(--bad); background: var(--bad); }
+    .dot.unconfigured { color: var(--neutral); background: var(--neutral); }
+    .name { font-weight: 600; font-size: 17px; flex: 1; min-width: 0; }
+    .pill {
+      font-size: 11px; padding: 2px 8px; border-radius: 999px;
+      border: 1px solid var(--border); color: var(--fg-dim);
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .pill.crit { color: var(--bad); border-color: color-mix(in srgb, var(--bad) 40%, var(--border)); }
+    .status-line { color: var(--fg-dim); font-size: 14px; }
+    .status-line.bad { color: var(--bad); }
+    .meta-row {
+      display: flex; flex-wrap: wrap; gap: 6px 18px;
+      font-size: 13px; color: var(--fg-dim); margin-top: 2px;
+    }
+    .meta-row b { color: var(--fg); font-weight: 600; }
+    details { margin-top: 6px; }
+    summary { cursor: pointer; color: var(--fg-dim); font-size: 13px; }
+    .checks { margin: 8px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px; }
+    .checks li { background: var(--panel-2); border-radius: 8px; padding: 6px 10px; font-size: 13px; display: flex; justify-content: space-between; gap: 8px; }
+    .checks .k { color: var(--fg-dim); }
+    .checks .v.ok { color: var(--ok); }
+    .checks .v.down, .checks .v.degraded { color: var(--bad); }
+    footer { margin-top: 28px; color: var(--fg-dim); font-size: 13px; text-align: center; }
+    footer a { color: inherit; }
+    .skeleton { height: 72px; background: linear-gradient(90deg, var(--panel), var(--panel-2), var(--panel)); background-size: 200% 100%; animation: shine 1.2s linear infinite; border-radius: var(--radius); margin-bottom: 12px; }
+    @keyframes shine { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><span class="emoji">🗼</span>Watchtower</h1>
+    <div class="meta" id="generated">loading…</div>
+  </header>
+
+  <div id="banner"></div>
+  <main id="grid">
+    <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+  </main>
+  <footer>
+    Checks run every 5 minutes. Email alerts fire immediately for critical projects.
+    <br>
+    <a href="https://github.com/jeromydarling/watchtower">Source →</a>
+  </footer>
+
+  <script>
+    const fmtTime = (iso) => {
+      if (!iso) return "—";
+      const d = new Date(iso);
+      const diff = (Date.now() - d.getTime()) / 1000;
+      if (diff < 60) return "just now";
+      if (diff < 3600) return `${Math.floor(diff / 60)} min ago`;
+      if (diff < 86400) return `${Math.floor(diff / 3600)} hr ago`;
+      return d.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" });
+    };
+    const fmtPct = (n) => n == null ? "—" : `${Number(n).toFixed(2)}%`;
+
+    const statusSentence = (p) => {
+      const s = p.current.status;
+      if (s === "ok") return `Healthy — responding in ${p.current.latency_ms ?? "?"}ms.`;
+      if (s === "degraded") return `Degraded — some subsystems reporting issues.`;
+      if (s === "down") return p.current.error ? `Down: ${p.current.error}` : `Down.`;
+      if (s === "unconfigured") return `No health endpoint configured yet.`;
+      return s;
+    };
+
+    async function load() {
+      try {
+        const res = await fetch("status.json", { cache: "no-store" });
+        const data = await res.json();
+        render(data);
+      } catch (e) {
+        document.getElementById("grid").innerHTML =
+          `<div class="card"><div class="status-line bad">Could not load status.json — the check loop may not have run yet.</div></div>`;
+      }
+    }
+
+    function render(data) {
+      document.getElementById("generated").textContent =
+        `Updated ${fmtTime(data.generated_at)}`;
+
+      const projs = data.projects ?? [];
+      const down = projs.filter(p => p.current.status === "down");
+      const degraded = projs.filter(p => p.current.status === "degraded");
+      const banner = document.getElementById("banner");
+      if (down.length === 0 && degraded.length === 0) {
+        banner.innerHTML = `<div class="banner ok">✅ <strong>All clear.</strong> ${projs.length} projects healthy.</div>`;
+      } else {
+        const bits = [];
+        if (down.length)     bits.push(`${down.length} down`);
+        if (degraded.length) bits.push(`${degraded.length} degraded`);
+        banner.innerHTML = `<div class="banner bad">⚠️ <strong>${bits.join(", ")}.</strong> See below.</div>`;
+      }
+
+      // Sort: down first, then degraded, then critical OK, then rest
+      const order = { down: 0, degraded: 1, unconfigured: 2, ok: 3 };
+      projs.sort((a, b) => {
+        const da = order[a.current.status] ?? 9;
+        const db = order[b.current.status] ?? 9;
+        if (da !== db) return da - db;
+        if (a.critical !== b.critical) return a.critical ? -1 : 1;
+        return a.name.localeCompare(b.name);
+      });
+
+      const grid = document.getElementById("grid");
+      grid.innerHTML = projs.map(p => {
+        const s = p.current.status;
+        const checks = Object.entries(p.current.checks || {});
+        const checksHtml = checks.length
+          ? `<details><summary>${checks.length} subsystem check${checks.length === 1 ? "" : "s"}</summary>
+               <ul class="checks">${checks.map(([k, v]) =>
+                 `<li><span class="k">${k}</span><span class="v ${v}">${v}</span></li>`).join("")}</ul>
+             </details>`
+          : "";
+        const line = statusSentence(p);
+        return `
+          <article class="card">
+            <div class="card-head">
+              <span class="dot ${s}" aria-hidden="true"></span>
+              <span class="name">${p.name}</span>
+              ${p.critical ? '<span class="pill crit">critical</span>' : '<span class="pill">standard</span>'}
+            </div>
+            <div class="status-line ${s === 'down' ? 'bad' : ''}">${line}</div>
+            <div class="meta-row">
+              <span>checked <b>${fmtTime(p.current.checked_at)}</b></span>
+              <span>24h <b>${fmtPct(p.uptime.last_24h)}</b></span>
+              <span>7d <b>${fmtPct(p.uptime.last_7d)}</b></span>
+              <span>incidents this week <b>${p.uptime.incidents_7d}</b></span>
+            </div>
+            ${checksHtml}
+          </article>`;
+      }).join("");
+    }
+
+    load();
+    // Auto-refresh every 60s while the tab is open
+    setInterval(load, 60_000);
+  </script>
+</body>
+</html>

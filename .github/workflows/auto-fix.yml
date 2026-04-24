@@ -1,0 +1,31 @@
+name: Watchtower auto-fix sweep
+
+# Nightly sweep across all monitored repos for the two pre-approved silent-failure
+# patterns:
+#   - floating @supabase/supabase-js imports (re-pin to 2.57.2)
+#   - deno.lock files inside supabase/functions/
+#
+# Anything else found is turned into an APPROVAL issue in the monitored repo
+# with a one-line description and reaction-based approval (see approve-fix.yml).
+
+on:
+  schedule:
+    - cron: "17 7 * * *"   # 07:17 UTC daily (2:17a CT)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+      - name: Run auto-fix sweep
+        env:
+          # Fine-grained PAT with `contents: write` + `pull_requests: write`
+          # on the monitored repos, and `issues: write` for approvals.
+          GH_TOKEN: ${{ secrets.WATCHTOWER_MONITORED_REPOS_TOKEN }}
+        run: node --experimental-strip-types scripts/auto-fix-sweep.ts

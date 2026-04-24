@@ -1,0 +1,4 @@
+project_id = "watchtower"
+
+[functions.ingest-error]
+verify_jwt = false

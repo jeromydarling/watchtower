@@ -1,0 +1,18 @@
+{
+  "name": "watchtower",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Single-pane monitoring, alerting, and auto-repair for Jeromy's Lovable/Supabase projects.",
+  "type": "module",
+  "scripts": {
+    "check": "node --experimental-strip-types scripts/run-checks.ts",
+    "digest": "node --experimental-strip-types scripts/daily-digest.ts",
+    "lint": "echo 'no linter configured'"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.57.2"
+  }
+}
