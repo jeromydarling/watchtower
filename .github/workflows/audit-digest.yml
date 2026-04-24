@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - run: npm ci --no-audit --no-fund
+      - run: npm install --omit=dev --no-audit --no-fund
       - name: Run audit digest
         env:
           GITHUB_TOKEN: ${{ secrets.WATCHTOWER_MONITORED_REPOS_TOKEN }}
