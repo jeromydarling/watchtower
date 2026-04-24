@@ -268,11 +268,17 @@ async function checkOne(p: Project): Promise<CheckResult> {
   return base;
 }
 
+/** URL to this project's runbook inside the watchtower repo. */
+function runbookUrl(slug: string): string {
+  return `https://github.com/jeromydarling/watchtower/blob/main/runbooks/${slug}.md`;
+}
+
 /** Build a plain-English summary of the change for the email. */
 function humanize(p: Project, prev: string | null, curr: CheckResult): string {
   const when = new Date(curr.checked_at).toLocaleString("en-US", {
     timeZone: "America/Chicago", dateStyle: "medium", timeStyle: "short",
   });
+  const runbook = `Runbook: ${runbookUrl(p.slug)}`;
   if (prev === "ok" && curr.status !== "ok") {
     const reason = curr.error ?? "the health check reported it is not ok";
     const failing = Object.entries(curr.checks).filter(([, v]) => v !== "ok");
@@ -292,13 +298,17 @@ function humanize(p: Project, prev: string | null, curr: CheckResult): string {
       sslWarning,
       deployContext,
       p.critical ? "This is a TIER 1 project." : "This project is tier 2.",
+      runbook,
       `Repo: https://github.com/${p.repo}`,
     ].filter(Boolean).join("\n\n");
   }
   if (prev !== "ok" && curr.status === "ok") {
     return `${p.name} is back up as of ${when} Central. No action needed.`;
   }
-  return `${p.name} status changed from ${prev ?? "unknown"} to ${curr.status} at ${when} Central.`;
+  return [
+    `${p.name} status changed from ${prev ?? "unknown"} to ${curr.status} at ${when} Central.`,
+    runbook,
+  ].join("\n\n");
 }
 
 async function main() {
