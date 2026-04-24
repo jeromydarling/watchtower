@@ -1,4 +1,362 @@
 {
-  "generated_at": "1970-01-01T00:00:00Z",
-  "projects": []
+  "generated_at": "2026-04-24T21:05:16.306Z",
+  "projects": [
+    {
+      "name": "Schola",
+      "slug": "theschola",
+      "repo": "jeromydarling/theschola",
+      "critical": true,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "CROS",
+      "slug": "thecros",
+      "repo": "jeromydarling/thecros",
+      "critical": true,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "Hortus",
+      "slug": "hortus",
+      "repo": "jeromydarling/hortus",
+      "critical": true,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "Refugium",
+      "slug": "refugium",
+      "repo": "jeromydarling/refugium",
+      "critical": false,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "Resurrectio",
+      "slug": "resurrectio",
+      "repo": "jeromydarling/resurrectio",
+      "critical": false,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "Transitus",
+      "slug": "transitus",
+      "repo": "jeromydarling/transitus",
+      "critical": false,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "Vigilia",
+      "slug": "vigilia",
+      "repo": "jeromydarling/vigilia",
+      "critical": false,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "Communis",
+      "slug": "communis",
+      "repo": "jeromydarling/communis-b47839b1",
+      "critical": false,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "Propria",
+      "slug": "propria",
+      "repo": "jeromydarling/propria-1e798e8e",
+      "critical": false,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "Cormundum",
+      "slug": "cormundum",
+      "repo": "jeromydarling/cormundum",
+      "critical": false,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:15.999Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "Bitoku",
+      "slug": "bitoku",
+      "repo": "jeromydarling/bitoku",
+      "critical": false,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:16.000Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "Rehearso",
+      "slug": "rehearso",
+      "repo": "jeromydarling/rehearso",
+      "critical": false,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:16.000Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "Heritage Kitchen",
+      "slug": "heritage-kitchen",
+      "repo": "jeromydarling/heritage-kitchen",
+      "critical": false,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:16.000Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "Via Publica",
+      "slug": "via-publica",
+      "repo": "jeromydarling/via-publica",
+      "critical": false,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:16.000Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "Fabrica Forge",
+      "slug": "fabrica-forge",
+      "repo": "jeromydarling/fabrica-forge",
+      "critical": false,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:16.000Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "Catholic Insurance",
+      "slug": "catholic-insurance",
+      "repo": "jeromydarling/catholic-insurance",
+      "critical": false,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:16.000Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    },
+    {
+      "name": "VRT Method",
+      "slug": "vrtmethod",
+      "repo": "jeromydarling/vrtmethod",
+      "critical": false,
+      "health_url": null,
+      "current": {
+        "status": "unconfigured",
+        "latency_ms": null,
+        "error": "No health_url configured",
+        "checked_at": "2026-04-24T21:05:16.000Z",
+        "checks": {},
+        "version": null
+      },
+      "uptime": {
+        "last_24h": 0,
+        "last_7d": 0,
+        "last_30d": 0,
+        "incidents_7d": 0
+      }
+    }
+  ]
 }
