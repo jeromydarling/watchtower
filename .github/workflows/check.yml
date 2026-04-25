@@ -51,10 +51,18 @@ jobs:
           fi
           git commit -m "chore(watchtower): update status [skip ci]"
           # Retry with rebase on conflict (other check runs can push concurrently).
+          # status.json and outbox files are generated artifacts — on conflict,
+          # always prefer our freshly-computed copy ('ours' during rebase = incoming).
           for i in 1 2 3 4 5; do
             if git push; then exit 0; fi
             echo "Push rejected (attempt $i), rebasing and retrying..."
-            git pull --rebase origin main || true
+            git fetch origin main
+            git rebase -X theirs origin/main || {
+              # If rebase still fails (non-file conflict), abort and try a plain pull+merge
+              git rebase --abort || true
+              git reset --hard HEAD
+              git pull --no-rebase -X ours origin main || true
+            }
             sleep $((RANDOM % 5 + 1))
           done
           echo "Giving up after 5 push attempts."
