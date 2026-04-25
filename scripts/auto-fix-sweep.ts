@@ -15,6 +15,17 @@ import { execSync } from "node:child_process";
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync, rmSync } from "node:fs";
 import { resolve, join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { createClient } from "@supabase/supabase-js";
+
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const sb = (SUPABASE_URL && SUPABASE_KEY) ? createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+
+async function logActivity(args: { actor: string; action: string; slug?: string; summary: string; github_url?: string }) {
+  if (!sb) return;
+  try { await sb.from("activity_log").insert(args); }
+  catch (e: any) { console.error("activity_log insert failed:", e?.message?.slice(0, 200)); }
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -46,7 +57,7 @@ function walk(dir: string, out: string[] = []): string[] {
   return out;
 }
 
-async function sweepRepo(repo: string) {
+async function sweepRepo(repo: string, slug: string) {
   const dir = join(WORK, repo.replace("/", "__"));
   try {
     sh(`gh repo clone ${repo} ${dir} -- --quiet --depth=1`);
@@ -118,6 +129,16 @@ async function sweepRepo(repo: string) {
     const url = prJson.trim().split("\n").pop() ?? "";
     console.log(`[${repo}] PR opened ${url}`);
     sh(`gh pr merge ${url} --squash --auto --delete-branch`);
+    await logActivity({
+      actor: "watchtower-bot",
+      action: "auto_fixed",
+      slug,
+      summary: `Auto-fix sweep on ${repo}: ${[
+        changedFiles.length ? `re-pinned ${changedFiles.length} supabase-js import(s)` : null,
+        removedLocks.length ? `removed ${removedLocks.length} deno.lock` : null,
+      ].filter(Boolean).join(", ")}.`,
+      github_url: url,
+    });
   } catch (e: any) {
     console.log(`[${repo}] PR creation failed (maybe already exists):`, e?.message?.slice(0, 200));
   }
@@ -126,7 +147,7 @@ async function sweepRepo(repo: string) {
 async function main() {
   for (const p of projects) {
     if (!p.repo) continue;
-    try { await sweepRepo(p.repo); }
+    try { await sweepRepo(p.repo, p.slug); }
     catch (e: any) { console.error(`[${p.repo}]`, e?.message?.slice(0, 300)); }
   }
 }

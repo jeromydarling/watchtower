@@ -409,9 +409,92 @@ async function main() {
   );
   if (upErr) console.error("Failed to upsert current_status:", upErr.message);
 
+  // 3.5) Error-rate alerts: ≥5 same-fingerprint occurrences in the last hour.
+  //      Per-slug error summaries also feed the dashboard.
+  const ERROR_THRESHOLD = 5;
+  const ERROR_WINDOW_MIN = 60;
+  const errorSummaries: Record<string, { total_24h: number; top: { fingerprint: string; message: string; count: number; last_seen: string }[] }> = {};
+
+  try {
+    const { data: hot } = await sb.rpc("errors_recent_by_fingerprint", { window_minutes: ERROR_WINDOW_MIN });
+    const { data: alreadySent } = await sb.from("error_alerts_sent").select("slug, fingerprint, last_alerted_at");
+    const sentMap = new Map<string, string>();
+    for (const a of alreadySent ?? []) sentMap.set(`${a.slug}|${a.fingerprint}`, a.last_alerted_at);
+
+    const REALERT_HOURS = 24;
+    for (const row of hot ?? []) {
+      if (row.occurrences < ERROR_THRESHOLD) continue;
+      const project = CONFIG.projects.find((p) => p.slug === row.slug);
+      if (!project) continue; // unknown slug — skip silently
+      const key = `${row.slug}|${row.fingerprint}`;
+      const lastAlert = sentMap.get(key);
+      const tooSoon = lastAlert && (Date.now() - new Date(lastAlert).getTime()) < REALERT_HOURS * 3600_000;
+      if (tooSoon) continue;
+
+      const fname = `${new Date().toISOString().replace(/[:.]/g, "-")}-${row.slug}-error-burst.json`;
+      if (!outboxExisting.has(fname)) {
+        const narrative = `${project.name} is throwing the same error ${row.occurrences} times in the last hour.\n\nMessage: ${row.message}\n\nFingerprint: ${row.fingerprint}\nLast seen: ${new Date(row.last_seen).toLocaleString("en-US", { timeZone: "America/Chicago" })} Central\n\nThis isn't a downtime alert — the page is loading, but JavaScript on the page is failing for users. Check the runbook for what to do.`;
+        writeFileSync(resolve(ROOT, "alerts/outbox", fname), JSON.stringify({
+          kind: "error_burst",
+          project,
+          prev_status: null,
+          current: { slug: row.slug, fingerprint: row.fingerprint, occurrences: row.occurrences, last_seen: row.last_seen, message: row.message, checks: {} },
+          narrative,
+          urgent: project.critical,
+        }, null, 2));
+        await sb.from("error_alerts_sent").upsert(
+          { slug: row.slug, fingerprint: row.fingerprint, last_alerted_at: new Date().toISOString(), last_count: row.occurrences },
+          { onConflict: "slug,fingerprint" }
+        );
+      }
+    }
+
+    // Per-slug summary for the dashboard (top 3 fingerprints, last 24h totals).
+    const { data: by24h } = await sb
+      .from("errors")
+      .select("slug, fingerprint, message, count, last_seen_at")
+      .gte("last_seen_at", new Date(Date.now() - 24 * 3600_000).toISOString())
+      .order("last_seen_at", { ascending: false })
+      .limit(500);
+    for (const e of by24h ?? []) {
+      const s = errorSummaries[e.slug] ?? (errorSummaries[e.slug] = { total_24h: 0, top: [] });
+      s.total_24h += e.count;
+      const existing = s.top.find((t) => t.fingerprint === e.fingerprint);
+      if (existing) {
+        existing.count += e.count;
+        if (new Date(e.last_seen_at) > new Date(existing.last_seen)) existing.last_seen = e.last_seen_at;
+      } else if (s.top.length < 3) {
+        s.top.push({ fingerprint: e.fingerprint, message: e.message, count: e.count, last_seen: e.last_seen_at });
+      }
+    }
+  } catch (err) {
+    console.error("Error-rate check failed (non-fatal):", (err as Error).message);
+  }
+
   // 4) Build public/status.json (dashboard reads this)
   const { data: uptime } = await sb.rpc("uptime_summary");
   const uptimeMap = new Map((uptime ?? []).map((u: any) => [u.slug, u]));
+
+  // Pull lane state for the 4-lane dashboard.
+  const { data: triage } = await sb
+    .from("triage_decisions")
+    .select("slug, fingerprint, lane, status, fix_recipe, pr_url, issue_url, triaged_at, resolved_at")
+    .order("triaged_at", { ascending: false });
+
+  const lanes = {
+    auto_fixed:    (triage ?? []).filter((d: any) => d.lane === "auto_fix" && d.status === "fixed").slice(0, 50),
+    auto_pending:  (triage ?? []).filter((d: any) => d.lane === "auto_fix" && d.status !== "fixed").slice(0, 50),
+    needs_approval: (triage ?? []).filter((d: any) => d.lane === "needs_approval" && d.status === "open").slice(0, 50),
+    manual:        (triage ?? []).filter((d: any) => d.lane === "manual" && d.status === "open").slice(0, 50),
+  };
+
+  // Activity log: last 30 days, newest first, capped at 200 rows for the page payload.
+  const { data: activity } = await sb
+    .from("activity_log")
+    .select("occurred_at, actor, action, slug, fingerprint, summary, github_url")
+    .gte("occurred_at", new Date(Date.now() - 30 * 24 * 3600_000).toISOString())
+    .order("occurred_at", { ascending: false })
+    .limit(200);
 
   const dashboard = {
     generated_at: new Date().toISOString(),
@@ -443,9 +526,14 @@ async function main() {
           last_30d: u?.uptime_30d ?? null,
           incidents_7d: u?.incidents_7d ?? 0,
         },
+        errors: errorSummaries[r.slug] ?? { total_24h: 0, top: [] },
       };
     }),
   };
+  // Attach lane + activity feed to the dashboard payload.
+  (dashboard as any).lanes = lanes;
+  (dashboard as any).activity = activity ?? [];
+
   mkdirSync(resolve(ROOT, "public"), { recursive: true });
   writeFileSync(resolve(ROOT, "public/status.json"), JSON.stringify(dashboard, null, 2));
 

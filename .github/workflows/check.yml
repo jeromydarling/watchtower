@@ -32,6 +32,14 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.WATCHTOWER_SUPABASE_SERVICE_ROLE_KEY }}
         run: npm run check
 
+      - name: Triage errors into lanes
+        env:
+          SUPABASE_URL: ${{ secrets.WATCHTOWER_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.WATCHTOWER_SUPABASE_SERVICE_ROLE_KEY }}
+          GITHUB_TOKEN: ${{ secrets.WATCHTOWER_MONITORED_REPOS_TOKEN }}
+        run: node --experimental-strip-types scripts/triage.ts
+        continue-on-error: true
+
       - name: Commit status.json and alerts
         run: |
           git config user.name  "watchtower-bot"

@@ -13,6 +13,7 @@
     "node": ">=22.6.0"
   },
   "dependencies": {
+    "@octokit/rest": "^21.0.0",
     "@supabase/supabase-js": "2.57.2"
   }
 }

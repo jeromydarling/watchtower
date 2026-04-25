@@ -13,6 +13,28 @@ import { execSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { createClient } from "@supabase/supabase-js";
+
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const sb = (SUPABASE_URL && SUPABASE_KEY) ? createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+
+async function logActivity(args: { actor: string; action: string; slug?: string; summary: string; github_url?: string }) {
+  if (!sb) return;
+  try { await sb.from("activity_log").insert(args); }
+  catch (e: any) { console.error("activity_log insert failed:", e?.message?.slice(0, 200)); }
+}
+
+async function updateDecision(slug: string, pattern: string, pr_url: string) {
+  if (!sb) return;
+  try {
+    await sb.from("triage_decisions")
+      .update({ status: "fixed", pr_url, resolved_at: new Date().toISOString() })
+      .eq("slug", slug)
+      .eq("fix_recipe", pattern)
+      .in("status", ["open", "in_progress"]);
+  } catch (e: any) { console.error("triage_decisions update failed:", e?.message?.slice(0, 200)); }
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const { projects } = JSON.parse(
@@ -67,6 +89,14 @@ for (const p of projects) {
       sh(`gh pr merge ${pr} --squash --auto --delete-branch`);
       sh(`gh issue close ${iss.number} --repo ${p.repo} --comment "Applied in ${pr}"`);
       console.log(`[${p.repo}#${iss.number}] applied → ${pr}`);
+      await logActivity({
+        actor: "watchtower",
+        action: "merged_pr",
+        slug: p.slug,
+        summary: `Applied approved fix for ${spec.pattern} (issue #${iss.number})`,
+        github_url: pr,
+      });
+      await updateDecision(p.slug, spec.pattern, pr);
     } catch (e: any) {
       console.log(`[${p.repo}#${iss.number}] failed:`, e?.message?.slice(0, 200));
     }
