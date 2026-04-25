@@ -21,7 +21,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: "22" }
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
       - name: Apply approved fixes
         env:
           GH_TOKEN: ${{ secrets.WATCHTOWER_MONITORED_REPOS_TOKEN }}
+          SUPABASE_URL: ${{ secrets.WATCHTOWER_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.WATCHTOWER_SUPABASE_SERVICE_ROLE_KEY }}
         run: node --experimental-strip-types scripts/apply-approved.ts
