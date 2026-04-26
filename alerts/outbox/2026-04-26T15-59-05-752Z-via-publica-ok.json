@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Via Publica",
+    "slug": "via-publica",
+    "repo": "jeromydarling/via-publica",
+    "health_url": "https://viapublica.com",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "via-publica",
+    "name": "Via Publica",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 2234,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-04-26T15:59:05.752Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 71,
+    "ssl_issuer": "Let's Encrypt",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Via Publica is back up as of Apr 26, 2026, 10:59 AM Central. No action needed.",
+  "urgent": false
+}
