@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Fabrica Forge",
+    "slug": "fabrica-forge",
+    "repo": "jeromydarling/fabrica-forge",
+    "health_url": "https://thefabrica.lovable.app/",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "fabrica-forge",
+    "name": "Fabrica Forge",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 10195,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-04-28T20:40:59.781Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": null,
+    "ssl_issuer": null,
+    "ssl_error": "TLS handshake timeout",
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Fabrica Forge just went down.\n\nWatchtower tried to reach it at Apr 28, 2026, 3:40 PM Central and got: Timed out after 10s.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/fabrica-forge.md\n\nRepo: https://github.com/jeromydarling/fabrica-forge",
+  "urgent": false
+}

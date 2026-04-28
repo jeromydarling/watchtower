@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "CROS",
+    "slug": "thecros",
+    "repo": "jeromydarling/thecros",
+    "health_url": "https://thecros.lovable.app",
+    "critical": true
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "thecros",
+    "name": "CROS",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 10207,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-04-28T20:40:59.757Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 77,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "CROS just went down.\n\nWatchtower tried to reach it at Apr 28, 2026, 3:40 PM Central and got: Timed out after 10s.\n\nThis is a TIER 1 project.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/thecros.md\n\nRepo: https://github.com/jeromydarling/thecros",
+  "urgent": true
+}

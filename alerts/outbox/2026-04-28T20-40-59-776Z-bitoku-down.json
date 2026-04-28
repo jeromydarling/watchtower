@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Bitoku",
+    "slug": "bitoku",
+    "repo": "jeromydarling/bitoku",
+    "health_url": "https://bitoku.lovable.app",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "bitoku",
+    "name": "Bitoku",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 10219,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-04-28T20:40:59.776Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": null,
+    "ssl_issuer": null,
+    "ssl_error": "TLS handshake timeout",
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Bitoku just went down.\n\nWatchtower tried to reach it at Apr 28, 2026, 3:40 PM Central and got: Timed out after 10s.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/bitoku.md\n\nRepo: https://github.com/jeromydarling/bitoku",
+  "urgent": false
+}
