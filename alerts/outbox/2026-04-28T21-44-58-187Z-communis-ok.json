@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Communis",
+    "slug": "communis",
+    "repo": "jeromydarling/communis-b47839b1",
+    "health_url": "https://communis.lovable.app",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "communis",
+    "name": "Communis",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 1295,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-04-28T21:44:58.187Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 77,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Communis is back up as of Apr 28, 2026, 4:44 PM Central. No action needed.",
+  "urgent": false
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Bitoku",
+    "slug": "bitoku",
+    "repo": "jeromydarling/bitoku",
+    "health_url": "https://bitoku.lovable.app",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "bitoku",
+    "name": "Bitoku",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 1729,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-04-28T21:44:58.191Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 77,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Bitoku is back up as of Apr 28, 2026, 4:44 PM Central. No action needed.",
+  "urgent": false
+}

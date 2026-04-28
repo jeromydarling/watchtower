@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Heritage Kitchen",
+    "slug": "heritage-kitchen",
+    "repo": "jeromydarling/heritage-kitchen",
+    "health_url": "https://heritage-kitchen-app.lovable.app",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "heritage-kitchen",
+    "name": "Heritage Kitchen",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 1285,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-04-28T21:44:58.194Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 77,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": "2026-04-27T23:01:30Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "Heritage Kitchen is back up as of Apr 28, 2026, 4:44 PM Central. No action needed.",
+  "urgent": false
+}
