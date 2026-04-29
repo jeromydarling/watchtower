@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Hortus",
+    "slug": "hortus",
+    "repo": "jeromydarling/hortus-claude-s-garden",
+    "health_url": "https://hortusapp.com",
+    "critical": true
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "hortus",
+    "name": "Hortus",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 10175,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-04-29T20:05:21.093Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 32,
+    "ssl_issuer": "Let's Encrypt",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Hortus just went down.\n\nWatchtower tried to reach it at Apr 29, 2026, 3:05 PM Central and got: Timed out after 10s.\n\nThis is a TIER 1 project.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/hortus.md\n\nRepo: https://github.com/jeromydarling/hortus-claude-s-garden",
+  "urgent": true
+}
