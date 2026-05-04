@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Cormundum",
+    "slug": "cormundum",
+    "repo": "jeromydarling/cormundum",
+    "health_url": "https://cormundum.lovable.app",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "cormundum",
+    "name": "Cormundum",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 10129,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-05-04T22:39:54.840Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 71,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Cormundum just went down.\n\nWatchtower tried to reach it at May 4, 2026, 5:39 PM Central and got: Timed out after 10s.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/cormundum.md\n\nRepo: https://github.com/jeromydarling/cormundum",
+  "urgent": false
+}
