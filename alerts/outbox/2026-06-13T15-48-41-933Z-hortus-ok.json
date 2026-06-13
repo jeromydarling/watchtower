@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Hortus",
+    "slug": "hortus",
+    "repo": "jeromydarling/hortus-claude-s-garden",
+    "health_url": "https://hortusapp.com",
+    "critical": true
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "hortus",
+    "name": "Hortus",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 2965,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-06-13T15:48:41.933Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 58,
+    "ssl_issuer": "Let's Encrypt",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Hortus is back up as of Jun 13, 2026, 10:48 AM Central. No action needed.",
+  "urgent": false
+}
