@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Refugium",
+    "slug": "refugium",
+    "repo": "jeromydarling/refugium-a261235f",
+    "health_url": "https://jeromydarling.github.io/refugium/",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "refugium",
+    "name": "Refugium",
+    "status": "down",
+    "http_status": 503,
+    "latency_ms": 257,
+    "checks": {},
+    "version": null,
+    "error": "HTTP 503",
+    "checked_at": "2026-06-18T10:32:25.401Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 17,
+    "ssl_issuer": "Let's Encrypt",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Refugium just went down.\n\nWatchtower tried to reach it at Jun 18, 2026, 5:32 AM Central and got: HTTP 503.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/refugium.md\n\nRepo: https://github.com/jeromydarling/refugium-a261235f",
+  "urgent": false
+}
