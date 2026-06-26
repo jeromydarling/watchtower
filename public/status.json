@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T22:07:08.958Z",
+  "generated_at": "2026-06-26T22:39:27.666Z",
   "projects": [
     {
       "name": "Schola",
@@ -9,9 +9,9 @@
       "health_url": "https://theschola.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1533,
+        "latency_ms": 1873,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.172Z",
+        "checked_at": "2026-06-26T22:39:22.518Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -39,9 +39,9 @@
       "health_url": "https://thecros.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1743,
+        "latency_ms": 2037,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.187Z",
+        "checked_at": "2026-06-26T22:39:22.532Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -69,9 +69,9 @@
       "health_url": "https://hortusapp.com",
       "current": {
         "status": "ok",
-        "latency_ms": 953,
+        "latency_ms": 1217,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.190Z",
+        "checked_at": "2026-06-26T22:39:22.535Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -82,8 +82,8 @@
       },
       "uptime": {
         "last_24h": 96.3,
-        "last_7d": 98.89,
-        "last_30d": 90.94,
+        "last_7d": 98.88,
+        "last_30d": 90.95,
         "incidents_7d": 2
       },
       "errors": {
@@ -99,9 +99,9 @@
       "health_url": "https://jeromydarling.github.io/refugium/",
       "current": {
         "status": "ok",
-        "latency_ms": 468,
+        "latency_ms": 818,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.193Z",
+        "checked_at": "2026-06-26T22:39:22.538Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -129,9 +129,9 @@
       "health_url": "https://resurrectio.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1826,
+        "latency_ms": 2055,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.195Z",
+        "checked_at": "2026-06-26T22:39:22.539Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -159,9 +159,9 @@
       "health_url": "https://jeromydarling.github.io/transitus/",
       "current": {
         "status": "ok",
-        "latency_ms": 485,
+        "latency_ms": 820,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.197Z",
+        "checked_at": "2026-06-26T22:39:22.542Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -189,9 +189,9 @@
       "health_url": "https://vigilia.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 2146,
+        "latency_ms": 2157,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.199Z",
+        "checked_at": "2026-06-26T22:39:22.543Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -219,9 +219,9 @@
       "health_url": "https://communis.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1573,
+        "latency_ms": 1341,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.200Z",
+        "checked_at": "2026-06-26T22:39:22.544Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -249,9 +249,9 @@
       "health_url": "https://propria.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1676,
+        "latency_ms": 2059,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.202Z",
+        "checked_at": "2026-06-26T22:39:22.546Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -279,9 +279,9 @@
       "health_url": "https://cormundum.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 970,
+        "latency_ms": 1287,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.203Z",
+        "checked_at": "2026-06-26T22:39:22.547Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -309,9 +309,9 @@
       "health_url": "https://bitoku.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1858,
+        "latency_ms": 2273,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.205Z",
+        "checked_at": "2026-06-26T22:39:22.549Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -339,9 +339,9 @@
       "health_url": "https://rehearso.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 2108,
+        "latency_ms": 2262,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.206Z",
+        "checked_at": "2026-06-26T22:39:22.550Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -369,9 +369,9 @@
       "health_url": "https://heritage-kitchen-app.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1140,
+        "latency_ms": 1547,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.208Z",
+        "checked_at": "2026-06-26T22:39:22.551Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -399,9 +399,9 @@
       "health_url": "https://viapublica.com",
       "current": {
         "status": "ok",
-        "latency_ms": 2303,
+        "latency_ms": 2675,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.209Z",
+        "checked_at": "2026-06-26T22:39:22.553Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -413,7 +413,7 @@
       "uptime": {
         "last_24h": 100,
         "last_7d": 100,
-        "last_30d": 85.78,
+        "last_30d": 85.8,
         "incidents_7d": 0
       },
       "errors": {
@@ -429,9 +429,9 @@
       "health_url": "https://thefabrica.lovable.app/",
       "current": {
         "status": "ok",
-        "latency_ms": 2013,
+        "latency_ms": 2334,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.210Z",
+        "checked_at": "2026-06-26T22:39:22.554Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -461,7 +461,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-06-26T22:07:03.212Z",
+        "checked_at": "2026-06-26T22:39:22.555Z",
         "checks": {},
         "version": null,
         "dns_ok": null,
@@ -489,9 +489,9 @@
       "health_url": "https://vrtmethod.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1071,
+        "latency_ms": 1798,
         "error": null,
-        "checked_at": "2026-06-26T22:07:03.214Z",
+        "checked_at": "2026-06-26T22:39:22.556Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
