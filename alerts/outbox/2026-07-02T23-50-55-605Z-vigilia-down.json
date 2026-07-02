@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Vigilia",
+    "slug": "vigilia",
+    "repo": "jeromydarling/vigilia-ffa3c410",
+    "health_url": "https://vigilia.lovable.app",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "vigilia",
+    "name": "Vigilia",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 10093,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-07-02T23:50:55.605Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 71,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Vigilia just went down.\n\nWatchtower tried to reach it at Jul 2, 2026, 6:50 PM Central and got: Timed out after 10s.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/vigilia.md\n\nRepo: https://github.com/jeromydarling/vigilia-ffa3c410",
+  "urgent": false
+}
