@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "CROS",
+    "slug": "thecros",
+    "repo": "jeromydarling/thecros",
+    "health_url": "https://thecros.lovable.app",
+    "critical": true
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "thecros",
+    "name": "CROS",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 1553,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-07-09T17:31:45.888Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 65,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "CROS is back up as of Jul 9, 2026, 12:31 PM Central. No action needed.",
+  "urgent": false
+}
