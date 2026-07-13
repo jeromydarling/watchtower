@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T13:06:56.629Z",
+  "generated_at": "2026-07-13T15:51:23.042Z",
   "projects": [
     {
       "name": "Schola",
@@ -9,9 +9,9 @@
       "health_url": "https://theschola.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1573,
+        "latency_ms": 1050,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.037Z",
+        "checked_at": "2026-07-13T15:51:17.097Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -39,9 +39,9 @@
       "health_url": "https://thecros.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1643,
+        "latency_ms": 1008,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.052Z",
+        "checked_at": "2026-07-13T15:51:17.111Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -53,7 +53,7 @@
       "uptime": {
         "last_24h": 100,
         "last_7d": 98.86,
-        "last_30d": 99.84,
+        "last_30d": 99.83,
         "incidents_7d": 1
       },
       "errors": {
@@ -69,9 +69,9 @@
       "health_url": "https://hortusapp.com",
       "current": {
         "status": "ok",
-        "latency_ms": 2673,
+        "latency_ms": 637,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.055Z",
+        "checked_at": "2026-07-13T15:51:17.113Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -83,7 +83,7 @@
       "uptime": {
         "last_24h": 100,
         "last_7d": 100,
-        "last_30d": 93.6,
+        "last_30d": 93.73,
         "incidents_7d": 0
       },
       "errors": {
@@ -99,9 +99,9 @@
       "health_url": "https://jeromydarling.github.io/refugium/",
       "current": {
         "status": "ok",
-        "latency_ms": 440,
+        "latency_ms": 311,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.057Z",
+        "checked_at": "2026-07-13T15:51:17.117Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -113,7 +113,7 @@
       "uptime": {
         "last_24h": 100,
         "last_7d": 100,
-        "last_30d": 99.84,
+        "last_30d": 99.83,
         "incidents_7d": 0
       },
       "errors": {
@@ -129,9 +129,9 @@
       "health_url": "https://resurrectio.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 2313,
+        "latency_ms": 1283,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.059Z",
+        "checked_at": "2026-07-13T15:51:17.119Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -159,9 +159,9 @@
       "health_url": "https://jeromydarling.github.io/transitus/",
       "current": {
         "status": "ok",
-        "latency_ms": 611,
+        "latency_ms": 315,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.062Z",
+        "checked_at": "2026-07-13T15:51:17.121Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -189,9 +189,9 @@
       "health_url": "https://vigilia.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1991,
+        "latency_ms": 1213,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.063Z",
+        "checked_at": "2026-07-13T15:51:17.123Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -203,7 +203,7 @@
       "uptime": {
         "last_24h": 100,
         "last_7d": 100,
-        "last_30d": 99.84,
+        "last_30d": 99.83,
         "incidents_7d": 0
       },
       "errors": {
@@ -219,9 +219,9 @@
       "health_url": "https://communis.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1861,
+        "latency_ms": 1380,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.065Z",
+        "checked_at": "2026-07-13T15:51:17.124Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -249,9 +249,9 @@
       "health_url": "https://propria.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 2172,
+        "latency_ms": 1430,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.066Z",
+        "checked_at": "2026-07-13T15:51:17.126Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -286,9 +286,9 @@
       "health_url": "https://cormundum.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1179,
+        "latency_ms": 747,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.068Z",
+        "checked_at": "2026-07-13T15:51:17.127Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -316,9 +316,9 @@
       "health_url": "https://bitoku.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 2300,
+        "latency_ms": 1453,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.069Z",
+        "checked_at": "2026-07-13T15:51:17.129Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -346,9 +346,9 @@
       "health_url": "https://rehearso.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 2189,
+        "latency_ms": 1437,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.071Z",
+        "checked_at": "2026-07-13T15:51:17.130Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -376,9 +376,9 @@
       "health_url": "https://heritage-kitchen-app.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1282,
+        "latency_ms": 1007,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.073Z",
+        "checked_at": "2026-07-13T15:51:17.132Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -406,9 +406,9 @@
       "health_url": "https://viapublica.com",
       "current": {
         "status": "ok",
-        "latency_ms": 2403,
+        "latency_ms": 1856,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.075Z",
+        "checked_at": "2026-07-13T15:51:17.133Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -420,7 +420,7 @@
       "uptime": {
         "last_24h": 100,
         "last_7d": 97.73,
-        "last_30d": 95.57,
+        "last_30d": 95.71,
         "incidents_7d": 1
       },
       "errors": {
@@ -436,9 +436,9 @@
       "health_url": "https://thefabrica.lovable.app/",
       "current": {
         "status": "ok",
-        "latency_ms": 2233,
+        "latency_ms": 1538,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.076Z",
+        "checked_at": "2026-07-13T15:51:17.135Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -468,7 +468,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-07-13T13:06:52.078Z",
+        "checked_at": "2026-07-13T15:51:17.136Z",
         "checks": {},
         "version": null,
         "dns_ok": null,
@@ -496,9 +496,9 @@
       "health_url": "https://vrtmethod.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1278,
+        "latency_ms": 909,
         "error": null,
-        "checked_at": "2026-07-13T13:06:52.078Z",
+        "checked_at": "2026-07-13T15:51:17.138Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -510,7 +510,7 @@
       "uptime": {
         "last_24h": 100,
         "last_7d": 100,
-        "last_30d": 99.84,
+        "last_30d": 99.83,
         "incidents_7d": 0
       },
       "errors": {
@@ -538,6 +538,15 @@
     ]
   },
   "activity": [
+    {
+      "occurred_at": "2026-07-13T13:06:57.177377+00:00",
+      "actor": "watchtower-bot",
+      "action": "triaged_unmatched",
+      "slug": "propria",
+      "fingerprint": "9f8ed36706c810bb7b0c473ff6030d8a51ada6945b9f584c2f2c8d5828ad03ab",
+      "summary": "Propria: new error pattern, no rule matched.",
+      "github_url": null
+    },
     {
       "occurred_at": "2026-07-02T05:28:27.004225+00:00",
       "actor": "watchtower-bot",
