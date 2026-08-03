@@ -1,0 +1,11 @@
+{
+  "ts": "2026-08-03T16:40:59.554Z",
+  "totals": {
+    "std_deprecated": 0,
+    "missing_cors": 0,
+    "webhook_no_verify_jwt": 0,
+    "oversized": 0,
+    "total_functions": 0
+  },
+  "results": []
+}
