@@ -7,7 +7,8 @@
   "scripts": {
     "check": "node --experimental-strip-types scripts/run-checks.ts",
     "digest": "node --experimental-strip-types scripts/daily-digest.ts",
-    "lint": "echo 'no linter configured'"
+    "lint": "echo 'no linter configured'",
+    "sync-rota": "node --experimental-strip-types scripts/sync-rota.ts"
   },
   "engines": {
     "node": ">=22.6.0"

@@ -26,9 +26,28 @@ Dashboard: `https://jeromydarling.github.io/watchtower/`
                                             └──► weekly digest email
 ```
 
-## Add a new project — one line
+## Add a new project
 
-Open `projects.json` and add a row:
+**If it's a CROS federation app, don't edit `projects.json`.** The rota in
+thecros (`src/content/federationRota.ts`) is the source of truth for what the
+federation contains and where each application actually serves. Add it there,
+then regenerate:
+
+```sh
+npm run sync-rota -- --rota ../thecros/src/content/federationRota.ts
+```
+
+That rewrites the federation half of `projects.json`, keeps the `critical` flag
+on anything already listed, and leaves non-federation projects alone. It prints
+what it added, every address that moved, and anything skipped for having no live
+URL. Commit the result.
+
+The two lists drifted apart once already: twelve projects were being pinged at
+`.lovable.app` and GitHub Pages addresses the applications had moved off months
+earlier. A monitor watching a stale address is worse than no monitor, because it
+reports green.
+
+**For anything outside the federation**, add a row by hand:
 
 ```json
 { "name": "New App", "slug": "new-app", "repo": "jeromydarling/new-app",
