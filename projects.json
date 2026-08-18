@@ -61,7 +61,7 @@
       "name": "Fairway",
       "slug": "fairway",
       "repo": "jeromydarling/fairway",
-      "health_url": "https://fairway.jer-f84.workers.dev",
+      "health_url": "https://fairwayos.golf",
       "critical": false
     },
     {
@@ -117,7 +117,7 @@
       "name": "Haven",
       "slug": "haven",
       "repo": "jeromydarling/haven",
-      "health_url": "https://haven.jer-f84.workers.dev",
+      "health_url": "https://haveninnernet.com",
       "critical": false
     },
     {
@@ -146,6 +146,13 @@
       "slug": "rehearso",
       "repo": "jeromydarling/rehearso",
       "health_url": "https://rehearso.app",
+      "critical": false
+    },
+    {
+      "name": "Bushi",
+      "slug": "bushi",
+      "repo": "jeromydarling/bushi",
+      "health_url": "https://bushi.pro",
       "critical": false
     },
     {
