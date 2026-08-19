@@ -110,7 +110,7 @@
       "name": "Transit OS",
       "slug": "transit",
       "repo": "jeromydarling/transit-os",
-      "health_url": "https://transit-os.jer-f84.workers.dev",
+      "health_url": "https://transit-os.app",
       "critical": false
     },
     {
