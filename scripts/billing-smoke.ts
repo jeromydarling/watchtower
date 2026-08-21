@@ -156,13 +156,13 @@ async function main() {
   let satellites = routing.satellites;
   if (ONLY) {
     if (!satellites.includes(ONLY)) {
-      console.error(`Satellite "${ONLY}" is not active with webhook_path=stripe-in. Active: ${satellites.join(", ")}`);
+      console.error(`Satellite "${ONLY}" is not an active hub-forwarded satellite. Active: ${satellites.join(", ")}`);
       process.exit(2);
     }
     satellites = [ONLY];
   }
   console.log(`Probing ${satellites.length} satellite(s): ${satellites.join(", ")}`);
-  console.log("(thecros and Cloudflare-hosted apps are excluded by design: they do not take the stripe-in path)");
+  console.log("(the routing list is every active row the hub forwards to: Supabase stripe-in and Cloudflare override satellites alike; apps on their own direct Stripe endpoints are excluded)");
 
   const { priceId, customerId } = await ensureFixtures();
   const results: Result[] = [];
