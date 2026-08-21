@@ -53,7 +53,7 @@ const REPO_BY_ID: Record<string, string> = {
   propria: "propria-aac78f12",
   transitus: "transitus-be0eceba",
   hortus: "hortus-claude-s-garden",
-  bitoku: "bitoku-9fb5dffb",
+  bitoku: "bitoku-949e0ed7",
   refugium: "refugium-a261235f",
   resurrectio: "resurrectio-3d07f98c",
   vigilia: "vigilia-ffa3c410",
