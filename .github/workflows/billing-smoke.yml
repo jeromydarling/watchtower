@@ -1,0 +1,35 @@
+name: Billing-path smoke test
+
+# Proves every active federation satellite can receive Stripe billing events
+# end to end (hub signature → router → federation HMAC → satellite webhook),
+# using $0 trial subscriptions in live mode. Run it after any billing change;
+# the monthly run catches quiet drift (undeployed functions, rotated secrets).
+
+on:
+  workflow_dispatch:
+    inputs:
+      satellite:
+        description: "Probe a single satellite slug (blank = all active)"
+        required: false
+        default: ""
+  schedule:
+    - cron: "0 9 2 * *"   # monthly, 2nd at 09:00 UTC — after the essay pipeline day
+
+concurrency:
+  group: billing-smoke
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+      - run: npm install --omit=dev
+      - name: Probe the federation billing path
+        env:
+          CROS_STRIPE_SECRET_KEY: ${{ secrets.CROS_STRIPE_SECRET_KEY }}
+          CROS_HUB_SERVICE_ROLE_KEY: ${{ secrets.CROS_HUB_SERVICE_ROLE_KEY }}
+          SATELLITE: ${{ inputs.satellite }}
+        run: node --experimental-strip-types scripts/billing-smoke.ts

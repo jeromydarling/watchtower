@@ -96,6 +96,23 @@ These patterns are fixed without asking because they're always safe:
 Everything else that the sweep finds becomes an **approval issue** in the
 relevant repo. React with 👍 and Watchtower applies it; 👎 and it closes.
 
+## Billing-path smoke test (on demand + monthly)
+
+`scripts/billing-smoke.ts` proves every active federation satellite can
+receive Stripe billing events end to end — hub signature, metadata routing,
+federation HMAC, satellite webhook 2xx — using $1 subscriptions on 3-day
+trials in live mode. No payment method, no charge; every probe is canceled
+in the same run and the trial auto-cancels as a backstop.
+
+Run it from Actions ("Billing-path smoke test", optional single-satellite
+input) after any billing change; it also fires monthly on the 2nd. A red row
+means a satellite would eat its first real payment — the manual 2026-08-21
+run found an undeployed webhook and a Deno sync-verify bug this way, both
+invisible from the repos. thecros and the Cloudflare-hosted apps are
+excluded by design (they don't take the stripe-in path). Stripe fixtures are
+reused via lookup_key `watchtower-billing-smoke` and archived between runs —
+don't delete them.
+
 ## Dashboard features
 
 - Mobile-first, dark/light auto, single HTML file
@@ -113,6 +130,8 @@ In the watchtower repo settings → Secrets and variables → Actions:
 | `WATCHTOWER_SUPABASE_URL` | check.yml | URL of the Watchtower Supabase project (not your app Supabase) |
 | `WATCHTOWER_SUPABASE_SERVICE_ROLE_KEY` | check.yml | Service role key for the Watchtower Supabase project |
 | `WATCHTOWER_MONITORED_REPOS_TOKEN` | auto-fix.yml, approve-fix.yml | Fine-grained PAT with `contents: write`, `pull_requests: write`, `issues: write` on your monitored repos |
+| `CROS_STRIPE_SECRET_KEY` | billing-smoke.yml | Live Stripe key for CROS LLC; a restricted key with write on Customers, Subscriptions, Products/Prices is enough |
+| `CROS_HUB_SERVICE_ROLE_KEY` | billing-smoke.yml | Service role key of the CROS hub Supabase project (zmeawjhxbgvtcfcfcygf) — reads stripe_hub_events, tidies the DLQ |
 
 ## Files
 
@@ -130,6 +149,7 @@ public/status.json                  # regenerated each run
 .github/workflows/check.yml         # cron + deploy-pages
 .github/workflows/auto-fix.yml      # nightly sweep
 .github/workflows/approve-fix.yml   # approval poller
+.github/workflows/billing-smoke.yml # federation billing-path probe
 ```
 
 ## Design principles
