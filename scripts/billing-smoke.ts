@@ -24,23 +24,25 @@
  *   CROS_STRIPE_SECRET_KEY      live key; restricted is fine (write:
  *                               customers, subscriptions, products, prices)
  *   CROS_HUB_SUPABASE_URL       defaults to the hub project URL
- *   CROS_HUB_SERVICE_ROLE_KEY   to read stripe_hub_events / resolve DLQ rows
+ *   CROS_HUB_SMOKE_SECRET       shared secret for the hub's
+ *                               billing-smoke-report function (matches its
+ *                               WATCHTOWER_SMOKE_SECRET) — deliberately NOT
+ *                               the hub's service-role key, which no person
+ *                               can read out of a Lovable-managed project
  *   SATELLITE                   optional: probe just this slug
  *
  * Stripe fixtures are reused across runs via lookup_key
  * "watchtower-billing-smoke" — do not delete them in the dashboard; they are
  * inert between runs.
  */
-import { createClient } from "@supabase/supabase-js";
-
 const STRIPE_KEY = process.env.CROS_STRIPE_SECRET_KEY ?? "";
 const HUB_URL = process.env.CROS_HUB_SUPABASE_URL ?? "https://zmeawjhxbgvtcfcfcygf.supabase.co";
-const HUB_KEY = process.env.CROS_HUB_SERVICE_ROLE_KEY ?? "";
+const HUB_SECRET = process.env.CROS_HUB_SMOKE_SECRET ?? "";
 const ONLY = process.env.SATELLITE?.trim() || null;
 const PURPOSE = "watchtower-billing-smoke";
 
-if (!STRIPE_KEY || !HUB_KEY) {
-  console.error("CROS_STRIPE_SECRET_KEY and CROS_HUB_SERVICE_ROLE_KEY are required.");
+if (!STRIPE_KEY || !HUB_SECRET) {
+  console.error("CROS_STRIPE_SECRET_KEY and CROS_HUB_SMOKE_SECRET are required.");
   process.exit(2);
 }
 if (STRIPE_KEY.includes("_test_")) {
@@ -48,7 +50,17 @@ if (STRIPE_KEY.includes("_test_")) {
   process.exit(2);
 }
 
-const hub = createClient(HUB_URL, HUB_KEY);
+async function hubReport<T>(payload: Record<string, unknown>): Promise<T> {
+  const resp = await fetch(`${HUB_URL}/functions/v1/billing-smoke-report`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "x-watchtower-secret": HUB_SECRET },
+    body: JSON.stringify(payload),
+  });
+  const body = await resp.json();
+  if (!resp.ok || !body.ok) throw new Error(`billing-smoke-report ${payload.action} → ${resp.status}: ${JSON.stringify(body).slice(0, 200)}`);
+  return body as T;
+}
+
 const runStart = new Date().toISOString();
 const runId = `smoke-${Date.now()}`;
 
@@ -123,29 +135,25 @@ type Result = {
   detail: string[];
 };
 
-async function forwardsFor(satellite: string, eventType: string) {
-  const { data, error } = await hub
-    .from("stripe_hub_events")
-    .select("forwarded_status_code, forwarded_response")
-    .eq("satellite_app", satellite)
-    .eq("event_type", eventType)
-    .gte("routed_at", runStart)
-    .order("routed_at", { ascending: false })
-    .limit(1);
-  if (error) throw new Error(`hub query failed: ${error.message}`);
-  return data?.[0] ?? null;
+type HubEvent = {
+  event_type: string;
+  satellite_app: string;
+  forwarded_status_code: number;
+  forwarded_response: string | null;
+  routed_at: string;
+};
+let eventCache: HubEvent[] = [];
+async function refreshEvents() {
+  const body = await hubReport<{ events: HubEvent[] }>({ action: "events", since: runStart });
+  eventCache = body.events;
+}
+function forwardsFor(satellite: string, eventType: string): HubEvent | null {
+  return eventCache.find((e) => e.satellite_app === satellite && e.event_type === eventType) ?? null;
 }
 
 async function main() {
-  const { data: routes, error } = await hub
-    .from("stripe_account_routing")
-    .select("satellite_app, webhook_path, active")
-    .eq("active", true)
-    .eq("webhook_path", "stripe-in")
-    .order("satellite_app");
-  if (error) throw new Error(`routing query failed: ${error.message}`);
-
-  let satellites = (routes ?? []).map((r) => r.satellite_app as string);
+  const routing = await hubReport<{ satellites: string[] }>({ action: "routing" });
+  let satellites = routing.satellites;
   if (ONLY) {
     if (!satellites.includes(ONLY)) {
       console.error(`Satellite "${ONLY}" is not active with webhook_path=stripe-in. Active: ${satellites.join(", ")}`);
@@ -182,11 +190,12 @@ async function main() {
   // Poll for created + invoice forwards (up to 2 minutes).
   const deadline1 = Date.now() + 120_000;
   while (Date.now() < deadline1) {
+    await refreshEvents();
     let allSettled = true;
     for (const r of results) {
       if (!subs.has(r.satellite)) continue;
       if (r.created === "pending") {
-        const row = await forwardsFor(r.satellite, "customer.subscription.created");
+        const row = forwardsFor(r.satellite, "customer.subscription.created");
         if (row) {
           const ok = row.forwarded_status_code >= 200 && row.forwarded_status_code < 300;
           r.created = ok ? "pass" : "fail";
@@ -194,7 +203,7 @@ async function main() {
         }
       }
       if (r.invoice === "pending") {
-        const row = await forwardsFor(r.satellite, "invoice.paid");
+        const row = forwardsFor(r.satellite, "invoice.paid");
         if (row) {
           const ok = row.forwarded_status_code >= 200 && row.forwarded_status_code < 300;
           r.invoice = ok ? "pass" : "fail";
@@ -223,10 +232,11 @@ async function main() {
   }
   const deadline2 = Date.now() + 120_000;
   while (Date.now() < deadline2) {
+    await refreshEvents();
     let allSettled = true;
     for (const r of results) {
       if (!subs.has(r.satellite) || r.deleted !== "pending") continue;
-      const row = await forwardsFor(r.satellite, "customer.subscription.deleted");
+      const row = forwardsFor(r.satellite, "customer.subscription.deleted");
       if (row) {
         const ok = row.forwarded_status_code >= 200 && row.forwarded_status_code < 300;
         r.deleted = ok ? "pass" : "fail";
@@ -252,22 +262,12 @@ async function main() {
   // Resolve DLQ rows this run created, matched by payload content — invoice
   // payloads carry no metadata, so match on the probe customer id too.
   try {
-    const { data: open } = await hub
-      .from("stripe_hub_dlq")
-      .select("id, event_payload")
-      .eq("resolved", false)
-      .gte("created_at", runStart);
-    const mine = (open ?? []).filter((row) => {
-      const text = JSON.stringify(row.event_payload ?? {});
-      return text.includes(PURPOSE) || text.includes(customerId);
+    const body = await hubReport<{ resolved: number }>({
+      action: "resolve_dlq",
+      since: runStart,
+      match: [PURPOSE, customerId],
     });
-    if (mine.length) {
-      await hub
-        .from("stripe_hub_dlq")
-        .update({ resolved: true, resolved_at: new Date().toISOString(), failure_reason: `resolved by billing-smoke ${runId}` })
-        .in("id", mine.map((r) => r.id));
-      console.log(`Resolved ${mine.length} DLQ row(s) created by this run.`);
-    }
+    if (body.resolved) console.log(`Resolved ${body.resolved} DLQ row(s) created by this run.`);
   } catch (err) {
     console.warn(`DLQ tidy-up failed (rows remain visible, not harmful): ${(err as Error).message}`);
   }

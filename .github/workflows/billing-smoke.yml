@@ -30,6 +30,6 @@ jobs:
       - name: Probe the federation billing path
         env:
           CROS_STRIPE_SECRET_KEY: ${{ secrets.CROS_STRIPE_SECRET_KEY }}
-          CROS_HUB_SERVICE_ROLE_KEY: ${{ secrets.CROS_HUB_SERVICE_ROLE_KEY }}
+          CROS_HUB_SMOKE_SECRET: ${{ secrets.CROS_HUB_SMOKE_SECRET }}
           SATELLITE: ${{ inputs.satellite }}
         run: node --experimental-strip-types scripts/billing-smoke.ts

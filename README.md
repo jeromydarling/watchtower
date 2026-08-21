@@ -131,7 +131,7 @@ In the watchtower repo settings → Secrets and variables → Actions:
 | `WATCHTOWER_SUPABASE_SERVICE_ROLE_KEY` | check.yml | Service role key for the Watchtower Supabase project |
 | `WATCHTOWER_MONITORED_REPOS_TOKEN` | auto-fix.yml, approve-fix.yml | Fine-grained PAT with `contents: write`, `pull_requests: write`, `issues: write` on your monitored repos |
 | `CROS_STRIPE_SECRET_KEY` | billing-smoke.yml | Live Stripe key for CROS LLC; a restricted key with write on Customers, Subscriptions, Products/Prices is enough |
-| `CROS_HUB_SERVICE_ROLE_KEY` | billing-smoke.yml | Service role key of the CROS hub Supabase project (zmeawjhxbgvtcfcfcygf) — reads stripe_hub_events, tidies the DLQ |
+| `CROS_HUB_SMOKE_SECRET` | billing-smoke.yml | Shared secret you mint yourself (`openssl rand -hex 32`); must equal the `WATCHTOWER_SMOKE_SECRET` function secret on the CROS hub, which guards its `billing-smoke-report` endpoint. Not the hub's service-role key — nobody can read that out of a Lovable-managed project, and it never leaves it |
 
 ## Files
 
