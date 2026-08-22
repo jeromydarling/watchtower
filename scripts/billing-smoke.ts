@@ -69,8 +69,20 @@ function form(params: Record<string, unknown>, prefix = "", out: string[] = []):
   for (const [k, v] of Object.entries(params)) {
     const key = prefix ? `${prefix}[${k}]` : k;
     if (v === null || v === undefined) continue;
-    if (Array.isArray(v)) v.forEach((item, i) => form(item as Record<string, unknown>, `${key}[${i}]`, out));
-    else if (typeof v === "object") form(v as Record<string, unknown>, key, out);
+    // An array of primitives — lookup_keys[0]=… — must not recurse: a string
+    // is object-like enough for Object.entries to walk it character by
+    // character, which Stripe receives as lookup_keys[0][0]=w&[0][1]=a…
+    // and rejects as "Invalid string" with the characters listed back.
+    if (Array.isArray(v)) {
+      v.forEach((item, i) => {
+        const itemKey = `${key}[${i}]`;
+        if (item !== null && typeof item === "object") {
+          form(item as Record<string, unknown>, itemKey, out);
+        } else {
+          out.push(`${encodeURIComponent(itemKey)}=${encodeURIComponent(String(item))}`);
+        }
+      });
+    } else if (typeof v === "object") form(v as Record<string, unknown>, key, out);
     else out.push(`${encodeURIComponent(key)}=${encodeURIComponent(String(v))}`);
   }
   return out;
