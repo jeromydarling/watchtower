@@ -1,0 +1,34 @@
+{
+  "kind": "audit_digest",
+  "project": {
+    "name": "Watchtower Audit",
+    "slug": "_audit_digest",
+    "repo": "jeromydarling/watchtower",
+    "critical": false,
+    "health_url": ""
+  },
+  "prev_status": null,
+  "current": {
+    "status": "ok",
+    "checks": {
+      "std_deprecated": 0,
+      "missing_cors": 0,
+      "webhook_no_verify_jwt": 0,
+      "oversized": 0,
+      "total_functions": 0
+    }
+  },
+  "narrative": "Weekly Watchtower audit scan of 44 repositories, 0 edge functions.\n\nFindings across all repos (patterns 1d/1f/1i/1j):\n  • Deprecated std<0.190.0 imports: 0\n  • Functions missing CORS headers: 0\n  • Webhooks missing verify_jwt=false: 0\n  • Functions > 50KB (cold-start risk): 0\n\nNo offenders this week. Great work.\n\nDashboard: https://jeromydarling.github.io/watchtower/",
+  "urgent": false,
+  "details": {
+    "results": [],
+    "totals": {
+      "std_deprecated": 0,
+      "missing_cors": 0,
+      "webhook_no_verify_jwt": 0,
+      "oversized": 0,
+      "total_functions": 0
+    },
+    "top_offenders": []
+  }
+}
