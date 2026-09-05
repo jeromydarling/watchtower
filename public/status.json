@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-08-06T14:35:43.086Z",
+  "generated_at": "2026-09-05T18:26:35.266Z",
   "projects": [
     {
-      "name": "Schola",
-      "slug": "theschola",
-      "repo": "jeromydarling/theschola",
-      "critical": true,
-      "health_url": "https://theschola.lovable.app",
+      "name": "Communis",
+      "slug": "communis",
+      "repo": "jeromydarling/communis-b47839b1",
+      "critical": false,
+      "health_url": "https://communis.group",
       "current": {
         "status": "ok",
-        "latency_ms": 1129,
+        "latency_ms": 857,
         "error": null,
-        "checked_at": "2026-08-06T14:35:38.158Z",
+        "checked_at": "2026-09-05T18:26:27.515Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
-        "ssl_days_until_expiry": 37,
+        "ssl_days_until_expiry": 82,
         "ssl_issuer": "Google Trust Services",
         "last_deploy_at": null,
         "last_deploy_source": null
@@ -27,32 +27,25 @@
         "incidents_7d": 0
       },
       "errors": {
-        "total_24h": 1,
-        "top": [
-          {
-            "fingerprint": "d3c97f0536ddf29da35cff70a876ed669113d9d5db8d83435e5258448021fb1f",
-            "message": "Failed to register a ServiceWorker for scope ('https://theschola.lovable.app/') with script ('https://theschola.lovable.app/sw.js'): The script resource is behind a redirect, which is disallowed.",
-            "count": 1,
-            "last_seen": "2026-08-06T09:03:39.173831+00:00"
-          }
-        ]
+        "total_24h": 0,
+        "top": []
       }
     },
     {
-      "name": "CROS",
-      "slug": "thecros",
-      "repo": "jeromydarling/thecros",
-      "critical": true,
-      "health_url": "https://thecros.lovable.app",
+      "name": "Dominium",
+      "slug": "dominium",
+      "repo": "jeromydarling/dominium",
+      "critical": false,
+      "health_url": "https://dominiumapp.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1236,
+        "latency_ms": 896,
         "error": null,
-        "checked_at": "2026-08-06T14:35:38.177Z",
+        "checked_at": "2026-09-05T18:26:27.533Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
-        "ssl_days_until_expiry": 37,
+        "ssl_days_until_expiry": 66,
         "ssl_issuer": "Google Trust Services",
         "last_deploy_at": null,
         "last_deploy_source": null
@@ -60,7 +53,7 @@
       "uptime": {
         "last_24h": 100,
         "last_7d": 100,
-        "last_30d": 99.79,
+        "last_30d": 100,
         "incidents_7d": 0
       },
       "errors": {
@@ -69,29 +62,29 @@
       }
     },
     {
-      "name": "Hortus",
-      "slug": "hortus",
-      "repo": "jeromydarling/hortus-claude-s-garden",
-      "critical": true,
-      "health_url": "https://hortusapp.com",
+      "name": "Successio",
+      "slug": "successio",
+      "repo": "jeromydarling/successio",
+      "critical": false,
+      "health_url": "https://successio.jer-f84.workers.dev",
       "current": {
         "status": "ok",
-        "latency_ms": 676,
+        "latency_ms": 1475,
         "error": null,
-        "checked_at": "2026-08-06T14:35:38.180Z",
+        "checked_at": "2026-09-05T18:26:27.537Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
-        "ssl_days_until_expiry": 74,
+        "ssl_days_until_expiry": 84,
         "ssl_issuer": "Let's Encrypt",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-07-21T04:43:51Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
-        "last_7d": 96.64,
-        "last_30d": 97.43,
-        "incidents_7d": 3
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
       },
       "errors": {
         "total_24h": 0,
@@ -99,28 +92,28 @@
       }
     },
     {
-      "name": "Refugium",
-      "slug": "refugium",
-      "repo": "jeromydarling/refugium-a261235f",
+      "name": "Fabrica",
+      "slug": "fabrica",
+      "repo": "jeromydarling/fabrica-forge",
       "critical": false,
-      "health_url": "https://jeromydarling.github.io/refugium/",
+      "health_url": "https://thefabrica.app",
       "current": {
         "status": "ok",
-        "latency_ms": 333,
+        "latency_ms": 978,
         "error": null,
-        "checked_at": "2026-08-06T14:35:38.185Z",
+        "checked_at": "2026-09-05T18:26:27.540Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
-        "ssl_days_until_expiry": 27,
-        "ssl_issuer": "Let's Encrypt",
+        "ssl_days_until_expiry": 73,
+        "ssl_issuer": "Google Trust Services",
         "last_deploy_at": null,
         "last_deploy_source": null
       },
       "uptime": {
         "last_24h": 100,
         "last_7d": 100,
-        "last_30d": 99.79,
+        "last_30d": 100,
         "incidents_7d": 0
       },
       "errors": {
@@ -129,20 +122,200 @@
       }
     },
     {
-      "name": "Resurrectio",
-      "slug": "resurrectio",
-      "repo": "jeromydarling/resurrectio-3d07f98c",
+      "name": "Culina",
+      "slug": "culina",
+      "repo": "jeromydarling/culina",
       "critical": false,
-      "health_url": "https://resurrectio.lovable.app",
+      "health_url": "https://culina.life",
       "current": {
         "status": "ok",
-        "latency_ms": 1678,
+        "latency_ms": 720,
         "error": null,
-        "checked_at": "2026-08-06T14:35:38.189Z",
+        "checked_at": "2026-09-05T18:26:27.543Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
-        "ssl_days_until_expiry": 37,
+        "ssl_days_until_expiry": 54,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": "2026-08-21T21:38:54Z",
+        "last_deploy_source": "github"
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "ThriftOS",
+      "slug": "thriftos",
+      "repo": "jeromydarling/thriftos",
+      "critical": false,
+      "health_url": "https://thriftos.jer-f84.workers.dev",
+      "current": {
+        "status": "ok",
+        "latency_ms": 893,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.546Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 84,
+        "ssl_issuer": "Let's Encrypt",
+        "last_deploy_at": "2026-08-21T19:39:45Z",
+        "last_deploy_source": "github"
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Verto",
+      "slug": "verto",
+      "repo": "jeromydarling/rezene",
+      "critical": false,
+      "health_url": "https://verto.jer-f84.workers.dev",
+      "current": {
+        "status": "ok",
+        "latency_ms": 958,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.548Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 84,
+        "ssl_issuer": "Let's Encrypt",
+        "last_deploy_at": "2026-08-21T19:40:57Z",
+        "last_deploy_source": "github"
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Directio",
+      "slug": "directio",
+      "repo": "jeromydarling/directio",
+      "critical": false,
+      "health_url": "https://godirectio.com",
+      "current": {
+        "status": "ok",
+        "latency_ms": 935,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.550Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 49,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": "2026-07-27T21:30:10Z",
+        "last_deploy_source": "github"
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Fairway",
+      "slug": "fairway",
+      "repo": "jeromydarling/fairway",
+      "critical": false,
+      "health_url": "https://fairwayos.golf",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1085,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.552Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 71,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Propria",
+      "slug": "propria",
+      "repo": "jeromydarling/propria-aac78f12",
+      "critical": false,
+      "health_url": "https://propria.land",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1047,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.554Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 54,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Via Publica",
+      "slug": "viapublica",
+      "repo": "jeromydarling/via-publica",
+      "critical": false,
+      "health_url": "https://theviapublica.app",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1075,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.556Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 74,
         "ssl_issuer": "Google Trust Services",
         "last_deploy_at": null,
         "last_deploy_source": null
@@ -163,24 +336,534 @@
       "slug": "transitus",
       "repo": "jeromydarling/transitus-be0eceba",
       "critical": false,
-      "health_url": "https://jeromydarling.github.io/transitus/",
+      "health_url": "https://transitus.life",
       "current": {
         "status": "ok",
-        "latency_ms": 343,
+        "latency_ms": 1133,
         "error": null,
-        "checked_at": "2026-08-06T14:35:38.192Z",
+        "checked_at": "2026-09-05T18:26:27.557Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
-        "ssl_days_until_expiry": 27,
-        "ssl_issuer": "Let's Encrypt",
+        "ssl_days_until_expiry": 73,
+        "ssl_issuer": "Google Trust Services",
         "last_deploy_at": null,
         "last_deploy_source": null
       },
       "uptime": {
         "last_24h": 100,
         "last_7d": 100,
-        "last_30d": 99.57,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Custodia",
+      "slug": "custodia",
+      "repo": "jeromydarling/custodia",
+      "critical": false,
+      "health_url": "https://custodia.land",
+      "current": {
+        "status": "ok",
+        "latency_ms": 2288,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.559Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 79,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Sanctum",
+      "slug": "sanctum",
+      "repo": "jeromydarling/sanctum",
+      "critical": false,
+      "health_url": "https://sanctum.garden",
+      "current": {
+        "status": "ok",
+        "latency_ms": 987,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.561Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 55,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": "2026-08-22T04:30:49Z",
+        "last_deploy_source": "github"
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Refugium",
+      "slug": "refugium",
+      "repo": "jeromydarling/refugium-a261235f",
+      "critical": false,
+      "health_url": "https://refugium.life",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1472,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.563Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 85,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Transit OS",
+      "slug": "transit",
+      "repo": "jeromydarling/transit-os",
+      "critical": false,
+      "health_url": "https://transit-os.app",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1450,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.564Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 70,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Haven",
+      "slug": "haven",
+      "repo": "jeromydarling/haven",
+      "critical": false,
+      "health_url": "https://haveninnernet.com",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1216,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.566Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 71,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Convivium",
+      "slug": "convivium",
+      "repo": "jeromydarling/convivium",
+      "critical": false,
+      "health_url": "https://convivium.lovable.app",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1637,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.569Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 66,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "8 Seconds",
+      "slug": "8s",
+      "repo": "jeromydarling/8s",
+      "critical": false,
+      "health_url": "https://8s.rodeo",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1408,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.571Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 51,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": "2026-08-17T23:23:07Z",
+        "last_deploy_source": "github"
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "In Motu",
+      "slug": "inmotu",
+      "repo": "jeromydarling/inmotu",
+      "critical": false,
+      "health_url": "https://inmotu.jer-f84.workers.dev",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1434,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.573Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 84,
+        "ssl_issuer": "Let's Encrypt",
+        "last_deploy_at": "2026-08-22T01:36:26Z",
+        "last_deploy_source": "github"
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Rehearso",
+      "slug": "rehearso",
+      "repo": "jeromydarling/rehearso",
+      "critical": false,
+      "health_url": "https://rehearso.app",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1936,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.575Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 84,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Bushi",
+      "slug": "bushi",
+      "repo": "jeromydarling/bushi",
+      "critical": false,
+      "health_url": "https://bushi.pro",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1634,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.577Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 84,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": "2026-08-21T19:42:45Z",
+        "last_deploy_source": "github"
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Sodalitas",
+      "slug": "sodalitas",
+      "repo": "jeromydarling/sodalitas",
+      "critical": false,
+      "health_url": "https://sodalitas.jer-f84.workers.dev",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1697,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.578Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 84,
+        "ssl_issuer": "Let's Encrypt",
+        "last_deploy_at": "2026-08-12T16:14:12Z",
+        "last_deploy_source": "github"
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Coram",
+      "slug": "coram",
+      "repo": "jeromydarling/coram",
+      "critical": false,
+      "health_url": "https://coram.jer-f84.workers.dev",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1777,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.580Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 84,
+        "ssl_issuer": "Let's Encrypt",
+        "last_deploy_at": "2026-07-30T16:47:10Z",
+        "last_deploy_source": "github"
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Hortus",
+      "slug": "hortus",
+      "repo": "jeromydarling/hortus-claude-s-garden",
+      "critical": true,
+      "health_url": "https://hortus.life",
+      "current": {
+        "status": "ok",
+        "latency_ms": 2141,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.582Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 79,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Communicare",
+      "slug": "communicare",
+      "repo": "jeromydarling/communicare",
+      "critical": false,
+      "health_url": "https://communicare.farm",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1738,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.584Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 74,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": "2026-07-27T21:25:55Z",
+        "last_deploy_source": "github"
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Laevo",
+      "slug": "laevo",
+      "repo": "jeromydarling/laevo",
+      "critical": false,
+      "health_url": "https://laevo.us",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1894,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.585Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 50,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": "2026-09-05T00:46:09Z",
+        "last_deploy_source": "github"
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Flavor Doctors",
+      "slug": "flavor",
+      "repo": "jeromydarling/flavordoctors",
+      "critical": false,
+      "health_url": "https://flavordoctors.com",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1807,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.587Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 84,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Auxilium",
+      "slug": "auxilium",
+      "repo": "jeromydarling/auxilium",
+      "critical": false,
+      "health_url": "https://auxiliumos.com",
+      "current": {
+        "status": "ok",
+        "latency_ms": 1940,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.589Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 50,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": "2026-08-09T03:52:17Z",
+        "last_deploy_source": "github"
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
         "incidents_7d": 0
       },
       "errors": {
@@ -193,53 +876,16 @@
       "slug": "vigilia",
       "repo": "jeromydarling/vigilia-ffa3c410",
       "critical": false,
-      "health_url": "https://vigilia.lovable.app",
+      "health_url": "https://vigilia.care",
       "current": {
         "status": "ok",
-        "latency_ms": 1241,
+        "latency_ms": 2213,
         "error": null,
-        "checked_at": "2026-08-06T14:35:38.194Z",
+        "checked_at": "2026-09-05T18:26:27.590Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
-        "ssl_days_until_expiry": 37,
-        "ssl_issuer": "Google Trust Services",
-        "last_deploy_at": null,
-        "last_deploy_source": null
-      },
-      "uptime": {
-        "last_24h": 100,
-        "last_7d": 100,
-        "last_30d": 100,
-        "incidents_7d": 0
-      },
-      "errors": {
-        "total_24h": 1,
-        "top": [
-          {
-            "fingerprint": "0b48190c16822bc2e50f2aee9f40c94c70b9f4f70705c0bdbda651c79d7c850b",
-            "message": "Failed to parse module in 'https://vigilia.care/assets/index-BcnyiW0J.js'. Execution error: Unexpected token 'export'. Compile error: Missing end of curly braces on line 10102 and column 28339",
-            "count": 1,
-            "last_seen": "2026-08-06T08:52:58.91015+00:00"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Communis",
-      "slug": "communis",
-      "repo": "jeromydarling/communis-b47839b1",
-      "critical": false,
-      "health_url": "https://communis.lovable.app",
-      "current": {
-        "status": "ok",
-        "latency_ms": 1194,
-        "error": null,
-        "checked_at": "2026-08-06T14:35:38.196Z",
-        "checks": {},
-        "version": null,
-        "dns_ok": true,
-        "ssl_days_until_expiry": 37,
+        "ssl_days_until_expiry": 73,
         "ssl_issuer": "Google Trust Services",
         "last_deploy_at": null,
         "last_deploy_source": null
@@ -256,20 +902,20 @@
       }
     },
     {
-      "name": "Propria",
-      "slug": "propria",
-      "repo": "jeromydarling/propria-1e798e8e",
+      "name": "Resurrectio",
+      "slug": "resurrectio",
+      "repo": "jeromydarling/resurrectio-3d07f98c",
       "critical": false,
-      "health_url": "https://propria.lovable.app",
+      "health_url": "https://resurrectio.life",
       "current": {
         "status": "ok",
-        "latency_ms": 1268,
+        "latency_ms": 2419,
         "error": null,
-        "checked_at": "2026-08-06T14:35:38.198Z",
+        "checked_at": "2026-09-05T18:26:27.592Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
-        "ssl_days_until_expiry": 37,
+        "ssl_days_until_expiry": 72,
         "ssl_issuer": "Google Trust Services",
         "last_deploy_at": null,
         "last_deploy_source": null
@@ -286,20 +932,140 @@
       }
     },
     {
-      "name": "Cormundum",
+      "name": "Aequitas",
+      "slug": "aequitas",
+      "repo": "jeromydarling/aequitas",
+      "critical": false,
+      "health_url": "https://aequitas-os.com",
+      "current": {
+        "status": "ok",
+        "latency_ms": 2451,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.593Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 72,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Tutela",
+      "slug": "tutela",
+      "repo": "jeromydarling/viatutela",
+      "critical": false,
+      "health_url": "https://viatutela.jer-f84.workers.dev",
+      "current": {
+        "status": "ok",
+        "latency_ms": 2471,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.595Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 84,
+        "ssl_issuer": "Let's Encrypt",
+        "last_deploy_at": "2026-09-05T01:24:13Z",
+        "last_deploy_source": "github"
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "The Schola",
+      "slug": "theschola",
+      "repo": "jeromydarling/theschola",
+      "critical": true,
+      "health_url": "https://theschola.app",
+      "current": {
+        "status": "ok",
+        "latency_ms": 2553,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.596Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 85,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Collegium",
+      "slug": "collegium",
+      "repo": "jeromydarling/collegium-connect",
+      "critical": false,
+      "health_url": "https://collegium.help",
+      "current": {
+        "status": "ok",
+        "latency_ms": 2586,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.598Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 72,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Cor Mundum",
       "slug": "cormundum",
       "repo": "jeromydarling/cormundum",
       "critical": false,
       "health_url": "https://cormundum.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 756,
+        "latency_ms": 2503,
         "error": null,
-        "checked_at": "2026-08-06T14:35:38.200Z",
+        "checked_at": "2026-09-05T18:26:27.605Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
-        "ssl_days_until_expiry": 37,
+        "ssl_days_until_expiry": 66,
         "ssl_issuer": "Google Trust Services",
         "last_deploy_at": null,
         "last_deploy_source": null
@@ -318,18 +1084,18 @@
     {
       "name": "Bitoku",
       "slug": "bitoku",
-      "repo": "jeromydarling/bitoku",
+      "repo": "jeromydarling/bitoku-949e0ed7",
       "critical": false,
-      "health_url": "https://bitoku.lovable.app",
+      "health_url": "https://bitoku.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1314,
+        "latency_ms": 2625,
         "error": null,
-        "checked_at": "2026-08-06T14:35:38.202Z",
+        "checked_at": "2026-09-05T18:26:27.607Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
-        "ssl_days_until_expiry": 37,
+        "ssl_days_until_expiry": 60,
         "ssl_issuer": "Google Trust Services",
         "last_deploy_at": null,
         "last_deploy_source": null
@@ -346,20 +1112,140 @@
       }
     },
     {
-      "name": "Rehearso",
-      "slug": "rehearso",
-      "repo": "jeromydarling/rehearso",
+      "name": "VRT Method",
+      "slug": "vrt",
+      "repo": "jeromydarling/vrtmethod",
       "critical": false,
-      "health_url": "https://rehearso.lovable.app",
+      "health_url": "https://vrtmethod.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1375,
+        "latency_ms": 2611,
         "error": null,
-        "checked_at": "2026-08-06T14:35:38.204Z",
+        "checked_at": "2026-09-05T18:26:27.612Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
-        "ssl_days_until_expiry": 37,
+        "ssl_days_until_expiry": 66,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Heritage Catholic",
+      "slug": "heritage",
+      "repo": "jeromydarling/heritage-catholic",
+      "critical": false,
+      "health_url": "https://heritagecatholic.faith",
+      "current": {
+        "status": "ok",
+        "latency_ms": 2399,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.613Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 74,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "Commissio",
+      "slug": "commissio",
+      "repo": "jeromydarling/commissio",
+      "critical": false,
+      "health_url": "https://commissio.dev",
+      "current": {
+        "status": "ok",
+        "latency_ms": 2501,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.618Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 46,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "The Great Nave",
+      "slug": "nave",
+      "repo": "jeromydarling/thegreatnave-49ebb963",
+      "critical": false,
+      "health_url": "https://thegreatnave.lovable.app",
+      "current": {
+        "status": "ok",
+        "latency_ms": 2952,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.620Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 66,
+        "ssl_issuer": "Google Trust Services",
+        "last_deploy_at": null,
+        "last_deploy_source": null
+      },
+      "uptime": {
+        "last_24h": 100,
+        "last_7d": 100,
+        "last_30d": 100,
+        "incidents_7d": 0
+      },
+      "errors": {
+        "total_24h": 0,
+        "top": []
+      }
+    },
+    {
+      "name": "CROS",
+      "slug": "thecros",
+      "repo": "jeromydarling/thecros",
+      "critical": true,
+      "health_url": "https://thecros.lovable.app",
+      "current": {
+        "status": "ok",
+        "latency_ms": 3592,
+        "error": null,
+        "checked_at": "2026-09-05T18:26:27.621Z",
+        "checks": {},
+        "version": null,
+        "dns_ok": true,
+        "ssl_days_until_expiry": 66,
         "ssl_issuer": "Google Trust Services",
         "last_deploy_at": null,
         "last_deploy_source": null
@@ -383,76 +1269,16 @@
       "health_url": "https://heritage-kitchen-app.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1105,
+        "latency_ms": 4051,
         "error": null,
-        "checked_at": "2026-08-06T14:35:38.206Z",
+        "checked_at": "2026-09-05T18:26:27.623Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
-        "ssl_days_until_expiry": 37,
+        "ssl_days_until_expiry": 66,
         "ssl_issuer": "Google Trust Services",
         "last_deploy_at": "2026-05-26T15:40:26Z",
         "last_deploy_source": "github"
-      },
-      "uptime": {
-        "last_24h": 100,
-        "last_7d": 100,
-        "last_30d": 100,
-        "incidents_7d": 0
-      },
-      "errors": {
-        "total_24h": 0,
-        "top": []
-      }
-    },
-    {
-      "name": "Via Publica",
-      "slug": "via-publica",
-      "repo": "jeromydarling/via-publica",
-      "critical": false,
-      "health_url": "https://viapublica.com",
-      "current": {
-        "status": "ok",
-        "latency_ms": 1925,
-        "error": null,
-        "checked_at": "2026-08-06T14:35:38.208Z",
-        "checks": {},
-        "version": null,
-        "dns_ok": true,
-        "ssl_days_until_expiry": 39,
-        "ssl_issuer": "Let's Encrypt",
-        "last_deploy_at": null,
-        "last_deploy_source": null
-      },
-      "uptime": {
-        "last_24h": 100,
-        "last_7d": 100,
-        "last_30d": 99.57,
-        "incidents_7d": 0
-      },
-      "errors": {
-        "total_24h": 0,
-        "top": []
-      }
-    },
-    {
-      "name": "Fabrica Forge",
-      "slug": "fabrica-forge",
-      "repo": "jeromydarling/fabrica-forge",
-      "critical": false,
-      "health_url": "https://thefabrica.lovable.app/",
-      "current": {
-        "status": "ok",
-        "latency_ms": 1642,
-        "error": null,
-        "checked_at": "2026-08-06T14:35:38.209Z",
-        "checks": {},
-        "version": null,
-        "dns_ok": true,
-        "ssl_days_until_expiry": 37,
-        "ssl_issuer": "Google Trust Services",
-        "last_deploy_at": null,
-        "last_deploy_source": null
       },
       "uptime": {
         "last_24h": 100,
@@ -475,7 +1301,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-08-06T14:35:38.211Z",
+        "checked_at": "2026-09-05T18:26:27.625Z",
         "checks": {},
         "version": null,
         "dns_ok": null,
@@ -488,36 +1314,6 @@
         "last_24h": 0,
         "last_7d": 0,
         "last_30d": 0,
-        "incidents_7d": 0
-      },
-      "errors": {
-        "total_24h": 0,
-        "top": []
-      }
-    },
-    {
-      "name": "VRT Method",
-      "slug": "vrtmethod",
-      "repo": "jeromydarling/vrtmethod",
-      "critical": false,
-      "health_url": "https://vrtmethod.lovable.app",
-      "current": {
-        "status": "ok",
-        "latency_ms": 785,
-        "error": null,
-        "checked_at": "2026-08-06T14:35:38.212Z",
-        "checks": {},
-        "version": null,
-        "dns_ok": true,
-        "ssl_days_until_expiry": 37,
-        "ssl_issuer": "Google Trust Services",
-        "last_deploy_at": null,
-        "last_deploy_source": null
-      },
-      "uptime": {
-        "last_24h": 100,
-        "last_7d": 100,
-        "last_30d": 100,
         "incidents_7d": 0
       },
       "errors": {
@@ -544,168 +1340,5 @@
       }
     ]
   },
-  "activity": [
-    {
-      "occurred_at": "2026-08-06T09:58:02.60639+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "vigilia",
-      "fingerprint": "0b48190c16822bc2e50f2aee9f40c94c70b9f4f70705c0bdbda651c79d7c850b",
-      "summary": "Vigilia: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-08-06T09:58:02.231104+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "theschola",
-      "fingerprint": "d3c97f0536ddf29da35cff70a876ed669113d9d5db8d83435e5258448021fb1f",
-      "summary": "Schola: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-08-04T06:03:14.608784+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "communis",
-      "fingerprint": "cf12e42a66d4cc30e26fe84b898df229829c3d54e17e95742550f4f1959f1bb3",
-      "summary": "Communis: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-08-04T06:03:14.341223+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "communis",
-      "fingerprint": "929914681d31eab9fd3c4278de9563d43d0542da0cb584c79a5ae7172e49cd4a",
-      "summary": "Communis: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-08-03T22:14:47.263084+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "communis",
-      "fingerprint": "1bc6e55b222b3bf79b823bd25587d4c0f811ad75e6c4f495a8e3e7d6a1d6db79",
-      "summary": "Communis: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-08-03T20:15:58.453505+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "communis",
-      "fingerprint": "acf5b37d12c4c7dc789e0a5b9c5fa7fd82f191e090b368d76fcabd00eaa7fd97",
-      "summary": "Communis: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-08-03T20:15:58.295083+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "communis",
-      "fingerprint": "4ce30f2eed5b579b7bcf60ef60828435b5a20b3ffa849eef0e4d549af97855d3",
-      "summary": "Communis: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-08-03T19:35:37.249476+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "hortus",
-      "fingerprint": "2f36e7ff2b2d7a0b00b9ba92eabdb3940bbd52847fd18fbe75cd98cbfb2800f1",
-      "summary": "Hortus: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-08-03T19:35:36.807722+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "hortus",
-      "fingerprint": "bbae03633f19bc432798fb5f413bc13b77adfcd97c448888bacb77ae7c9afb4a",
-      "summary": "Hortus: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-08-03T18:12:36.026039+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "communis",
-      "fingerprint": "eb90448868456a41f2f1868a614c7173bf2f2137480b81750deb43117fbe4498",
-      "summary": "Communis: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-08-03T18:12:35.833866+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "communis",
-      "fingerprint": "7d5a5de46472fd1a6fde83a5bf778fc556b02eaf59e3ce535c251657ce4224c7",
-      "summary": "Communis: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-08-03T18:12:35.673458+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "communis",
-      "fingerprint": "891f4fe52a7205c5e7ac56720f68fb87d8d7315099b3d45fb043ed39f2b875dc",
-      "summary": "Communis: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-07-27T05:10:43.319893+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "rehearso",
-      "fingerprint": "71bb697d384fe0e97421e0bc68f19cd31635dab85b4b668410caafd5a4bd5479",
-      "summary": "Rehearso: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-07-21T09:45:58.249382+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "communis",
-      "fingerprint": "4e741c9e6cb54e196a5262eec47cc18822b53712a8ba686e5b2857e06b9510fd",
-      "summary": "Communis: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-07-19T16:35:13.404952+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "fabrica-forge",
-      "fingerprint": "150d7a1829c22c66576ae1c1c5623c772466f1a68c4df4a3a50255bca707bf51",
-      "summary": "Fabrica Forge: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-07-17T19:23:07.530152+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "propria",
-      "fingerprint": "f46781add6030f71b25e4b3b9ca2f1ad2edbeb03404a73c076bba04eb727e66a",
-      "summary": "Propria: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-07-16T08:32:30.76547+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "resurrectio",
-      "fingerprint": "5da89c637f3abc883d6a664e7aa3f31d9336f7d1e271a80f0ab20d20ec4bc545",
-      "summary": "Resurrectio: new error pattern, no rule matched.",
-      "github_url": null
-    },
-    {
-      "occurred_at": "2026-07-13T13:06:57.177377+00:00",
-      "actor": "watchtower-bot",
-      "action": "triaged_unmatched",
-      "slug": "propria",
-      "fingerprint": "9f8ed36706c810bb7b0c473ff6030d8a51ada6945b9f584c2f2c8d5828ad03ab",
-      "summary": "Propria: new error pattern, no rule matched.",
-      "github_url": null
-    }
-  ]
+  "activity": []
 }
