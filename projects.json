@@ -69,7 +69,7 @@
       "slug": "stabilitas",
       "repo": "jeromydarling/stabilitas",
       "health_url": "https://stabilitas.jer-f84.workers.dev",
-      "critical": false
+      "critical": true
     },
     {
       "name": "Propria",
@@ -132,7 +132,7 @@
       "slug": "taberna",
       "repo": "jeromydarling/taberna",
       "health_url": "https://taberna.pro",
-      "critical": false
+      "critical": true
     },
     {
       "name": "Convivium",
