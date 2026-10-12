@@ -65,6 +65,13 @@
       "critical": false
     },
     {
+      "name": "Stabilitas",
+      "slug": "stabilitas",
+      "repo": "jeromydarling/stabilitas",
+      "health_url": "https://stabilitas.jer-f84.workers.dev",
+      "critical": false
+    },
+    {
       "name": "Propria",
       "slug": "propria",
       "repo": "jeromydarling/propria-aac78f12",
@@ -118,6 +125,13 @@
       "slug": "haven",
       "repo": "jeromydarling/haven",
       "health_url": "https://haveninnernet.com",
+      "critical": false
+    },
+    {
+      "name": "Taberna",
+      "slug": "taberna",
+      "repo": "jeromydarling/taberna",
+      "health_url": "https://taberna.pro",
       "critical": false
     },
     {
@@ -286,6 +300,13 @@
       "slug": "nave",
       "repo": "jeromydarling/thegreatnave-49ebb963",
       "health_url": "https://thegreatnave.lovable.app",
+      "critical": false
+    },
+    {
+      "name": "Heritage History",
+      "slug": "heritagehistory",
+      "repo": "jeromydarling/heritage-history",
+      "health_url": "https://heritage-history.jer-f84.workers.dev",
       "critical": false
     },
     {
