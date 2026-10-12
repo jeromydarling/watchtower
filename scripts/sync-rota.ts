@@ -63,6 +63,7 @@ const REPO_BY_ID: Record<string, string> = {
   verto: "rezene",
   flavor: "flavordoctors",
   heritage: "heritage-catholic",
+  heritagehistory: "heritage-history",
   collegium: "collegium-connect",
   tutela: "viatutela",
   transit: "transit-os",
