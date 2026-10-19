@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "The Schola",
+    "slug": "theschola",
+    "repo": "jeromydarling/theschola",
+    "health_url": "https://theschola.app",
+    "critical": true
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "theschola",
+    "name": "The Schola",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 13036,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-10-19T10:17:38.164Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": null,
+    "ssl_issuer": null,
+    "ssl_error": "TLS handshake timeout",
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "The Schola just went down.\n\nWatchtower tried to reach it at Oct 19, 2026, 5:17 AM Central and got: Timed out after 10s.\n\nThis is a TIER 1 project.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/theschola.md\n\nRepo: https://github.com/jeromydarling/theschola",
+  "urgent": true
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Coram",
+    "slug": "coram",
+    "repo": "jeromydarling/coram",
+    "health_url": "https://coram.jer-f84.workers.dev",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "coram",
+    "name": "Coram",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 13120,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-10-19T10:17:38.150Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": null,
+    "ssl_issuer": null,
+    "ssl_error": "TLS handshake timeout",
+    "last_deploy_at": "2026-07-30T16:47:10Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "Coram just went down.\n\nWatchtower tried to reach it at Oct 19, 2026, 5:17 AM Central and got: Timed out after 10s.\n\nLast deploy: 7/30/2026, 11:47:10 AM Central (github).\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/coram.md\n\nRepo: https://github.com/jeromydarling/coram",
+  "urgent": false
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "VRT Method",
+    "slug": "vrt",
+    "repo": "jeromydarling/vrtmethod",
+    "health_url": "https://vrtmethod.lovable.app",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "vrt",
+    "name": "VRT Method",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 13066,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-10-19T10:17:38.167Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": null,
+    "ssl_issuer": null,
+    "ssl_error": "TLS handshake timeout",
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "VRT Method just went down.\n\nWatchtower tried to reach it at Oct 19, 2026, 5:17 AM Central and got: Timed out after 10s.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/vrt.md\n\nRepo: https://github.com/jeromydarling/vrtmethod",
+  "urgent": false
+}

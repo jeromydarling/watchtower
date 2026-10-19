@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "In Motu",
+    "slug": "inmotu",
+    "repo": "jeromydarling/inmotu",
+    "health_url": "https://inmotu.jer-f84.workers.dev",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "inmotu",
+    "name": "In Motu",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 13159,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-10-19T10:17:38.146Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": null,
+    "ssl_issuer": null,
+    "ssl_error": "TLS handshake timeout",
+    "last_deploy_at": "2026-08-22T01:36:26Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "In Motu just went down.\n\nWatchtower tried to reach it at Oct 19, 2026, 5:17 AM Central and got: Timed out after 10s.\n\nLast deploy: 8/21/2026, 8:36:26 PM Central (github).\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/inmotu.md\n\nRepo: https://github.com/jeromydarling/inmotu",
+  "urgent": false
+}

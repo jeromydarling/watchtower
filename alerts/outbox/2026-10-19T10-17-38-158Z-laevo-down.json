@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Laevo",
+    "slug": "laevo",
+    "repo": "jeromydarling/laevo",
+    "health_url": "https://laevo.us",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "laevo",
+    "name": "Laevo",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 13238,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-10-19T10:17:38.158Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": null,
+    "ssl_issuer": null,
+    "ssl_error": "TLS handshake timeout",
+    "last_deploy_at": "2026-09-05T00:46:09Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "Laevo just went down.\n\nWatchtower tried to reach it at Oct 19, 2026, 5:17 AM Central and got: Timed out after 10s.\n\nLast deploy: 9/4/2026, 7:46:09 PM Central (github).\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/laevo.md\n\nRepo: https://github.com/jeromydarling/laevo",
+  "urgent": false
+}

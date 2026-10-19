@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Sodalitas",
+    "slug": "sodalitas",
+    "repo": "jeromydarling/sodalitas",
+    "health_url": "https://sodalitas.jer-f84.workers.dev",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "sodalitas",
+    "name": "Sodalitas",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 13124,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-10-19T10:17:38.149Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": null,
+    "ssl_issuer": null,
+    "ssl_error": "TLS handshake timeout",
+    "last_deploy_at": "2026-08-12T16:14:12Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "Sodalitas just went down.\n\nWatchtower tried to reach it at Oct 19, 2026, 5:17 AM Central and got: Timed out after 10s.\n\nLast deploy: 8/12/2026, 11:14:12 AM Central (github).\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/sodalitas.md\n\nRepo: https://github.com/jeromydarling/sodalitas",
+  "urgent": false
+}

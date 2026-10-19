@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Collegium",
+    "slug": "collegium",
+    "repo": "jeromydarling/collegium-connect",
+    "health_url": "https://collegium.help",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "collegium",
+    "name": "Collegium",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 13042,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-10-19T10:17:38.165Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": null,
+    "ssl_issuer": null,
+    "ssl_error": "TLS handshake timeout",
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Collegium just went down.\n\nWatchtower tried to reach it at Oct 19, 2026, 5:17 AM Central and got: Timed out after 10s.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/collegium.md\n\nRepo: https://github.com/jeromydarling/collegium-connect",
+  "urgent": false
+}
