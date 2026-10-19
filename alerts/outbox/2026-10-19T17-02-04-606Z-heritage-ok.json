@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Heritage Catholic",
+    "slug": "heritage",
+    "repo": "jeromydarling/heritage-catholic",
+    "health_url": "https://heritagecatholic.faith",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "heritage",
+    "name": "Heritage Catholic",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 3586,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-10-19T17:02:04.606Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 89,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Heritage Catholic is back up as of Oct 19, 2026, 12:02 PM Central. No action needed.",
+  "urgent": false
+}

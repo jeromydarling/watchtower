@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Bushi",
+    "slug": "bushi",
+    "repo": "jeromydarling/bushi",
+    "health_url": "https://bushi.pro",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "bushi",
+    "name": "Bushi",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 2442,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-10-19T17:02:04.575Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 41,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": "2026-08-21T19:42:45Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "Bushi is back up as of Oct 19, 2026, 12:02 PM Central. No action needed.",
+  "urgent": false
+}

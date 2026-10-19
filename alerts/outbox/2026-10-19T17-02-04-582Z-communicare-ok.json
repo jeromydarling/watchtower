@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Communicare",
+    "slug": "communicare",
+    "repo": "jeromydarling/communicare",
+    "health_url": "https://communicare.farm",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "communicare",
+    "name": "Communicare",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 2545,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-10-19T17:02:04.582Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 89,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": "2026-07-27T21:25:55Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "Communicare is back up as of Oct 19, 2026, 12:02 PM Central. No action needed.",
+  "urgent": false
+}
