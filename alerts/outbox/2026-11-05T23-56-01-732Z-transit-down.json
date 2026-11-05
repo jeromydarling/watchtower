@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Transit OS",
+    "slug": "transit",
+    "repo": "jeromydarling/transit-os",
+    "health_url": "https://transit-os.app",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "transit",
+    "name": "Transit OS",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 10094,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-11-05T23:56:01.732Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 68,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Transit OS just went down.\n\nWatchtower tried to reach it at Nov 5, 2026, 5:56 PM Central and got: Timed out after 10s.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/transit.md\n\nRepo: https://github.com/jeromydarling/transit-os",
+  "urgent": false
+}
