@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Heritage Kitchen",
+    "slug": "heritage-kitchen",
+    "repo": "jeromydarling/heritage-kitchen",
+    "health_url": "https://heritage-kitchen-app.lovable.app",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "heritage-kitchen",
+    "name": "Heritage Kitchen",
+    "status": "down",
+    "http_status": 500,
+    "latency_ms": 4425,
+    "checks": {},
+    "version": null,
+    "error": "HTTP 500",
+    "checked_at": "2026-11-05T00:34:05.380Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 64,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": "2026-05-26T15:40:26Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "Heritage Kitchen just went down.\n\nWatchtower tried to reach it at Nov 4, 2026, 6:34 PM Central and got: HTTP 500.\n\nLast deploy: 5/26/2026, 10:40:26 AM Central (github).\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/heritage-kitchen.md\n\nRepo: https://github.com/jeromydarling/heritage-kitchen",
+  "urgent": false
+}
