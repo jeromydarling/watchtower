@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Stabilitas",
+    "slug": "stabilitas",
+    "repo": "jeromydarling/stabilitas",
+    "health_url": "https://stabilitas.jer-f84.workers.dev",
+    "critical": true
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "stabilitas",
+    "name": "Stabilitas",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 630,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-11-05T20:29:13.800Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 82,
+    "ssl_issuer": "Let's Encrypt",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Stabilitas is back up as of Nov 5, 2026, 2:29 PM Central. No action needed.",
+  "urgent": false
+}

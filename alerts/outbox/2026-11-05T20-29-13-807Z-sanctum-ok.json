@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Sanctum",
+    "slug": "sanctum",
+    "repo": "jeromydarling/sanctum",
+    "health_url": "https://sanctum.garden",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "sanctum",
+    "name": "Sanctum",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 863,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-11-05T20:29:13.807Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 52,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": "2026-08-22T04:30:49Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "Sanctum is back up as of Nov 5, 2026, 2:29 PM Central. No action needed.",
+  "urgent": false
+}

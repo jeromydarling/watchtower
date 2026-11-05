@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Successio",
+    "slug": "successio",
+    "repo": "jeromydarling/successio",
+    "health_url": "https://successio.jer-f84.workers.dev",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "successio",
+    "name": "Successio",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 1500,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-11-05T20:29:13.786Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 82,
+    "ssl_issuer": "Let's Encrypt",
+    "ssl_error": null,
+    "last_deploy_at": "2026-10-13T20:41:45Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "Successio is back up as of Nov 5, 2026, 2:29 PM Central. No action needed.",
+  "urgent": false
+}
