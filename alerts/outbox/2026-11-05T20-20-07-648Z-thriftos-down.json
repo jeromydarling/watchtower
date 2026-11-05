@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "ThriftOS",
+    "slug": "thriftos",
+    "repo": "jeromydarling/thriftos",
+    "health_url": "https://thriftos.jer-f84.workers.dev",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "thriftos",
+    "name": "ThriftOS",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 3531,
+    "checks": {},
+    "version": null,
+    "error": "fetch failed",
+    "checked_at": "2026-11-05T20:20:07.648Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": null,
+    "ssl_issuer": null,
+    "ssl_error": "ETIMEDOUT",
+    "last_deploy_at": "2026-09-10T15:47:49Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "ThriftOS just went down.\n\nWatchtower tried to reach it at Nov 5, 2026, 2:20 PM Central and got: fetch failed.\n\nLast deploy: 9/10/2026, 10:47:49 AM Central (github).\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/thriftos.md\n\nRepo: https://github.com/jeromydarling/thriftos",
+  "urgent": false
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Fairway",
+    "slug": "fairway",
+    "repo": "jeromydarling/fairway",
+    "health_url": "https://fairwayos.golf",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "fairway",
+    "name": "Fairway",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 3425,
+    "checks": {},
+    "version": null,
+    "error": "fetch failed",
+    "checked_at": "2026-11-05T20:20:07.651Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": null,
+    "ssl_issuer": null,
+    "ssl_error": "ETIMEDOUT",
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Fairway just went down.\n\nWatchtower tried to reach it at Nov 5, 2026, 2:20 PM Central and got: fetch failed.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/fairway.md\n\nRepo: https://github.com/jeromydarling/fairway",
+  "urgent": false
+}

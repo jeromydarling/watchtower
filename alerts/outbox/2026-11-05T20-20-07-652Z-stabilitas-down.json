@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Stabilitas",
+    "slug": "stabilitas",
+    "repo": "jeromydarling/stabilitas",
+    "health_url": "https://stabilitas.jer-f84.workers.dev",
+    "critical": true
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "stabilitas",
+    "name": "Stabilitas",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 3422,
+    "checks": {},
+    "version": null,
+    "error": "fetch failed",
+    "checked_at": "2026-11-05T20:20:07.652Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": null,
+    "ssl_issuer": null,
+    "ssl_error": "ETIMEDOUT",
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Stabilitas just went down.\n\nWatchtower tried to reach it at Nov 5, 2026, 2:20 PM Central and got: fetch failed.\n\nThis is a TIER 1 project.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/stabilitas.md\n\nRepo: https://github.com/jeromydarling/stabilitas",
+  "urgent": true
+}

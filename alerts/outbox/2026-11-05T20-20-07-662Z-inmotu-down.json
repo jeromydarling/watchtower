@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "In Motu",
+    "slug": "inmotu",
+    "repo": "jeromydarling/inmotu",
+    "health_url": "https://inmotu.jer-f84.workers.dev",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "inmotu",
+    "name": "In Motu",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 3523,
+    "checks": {},
+    "version": null,
+    "error": "fetch failed",
+    "checked_at": "2026-11-05T20:20:07.662Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": null,
+    "ssl_issuer": null,
+    "ssl_error": "ETIMEDOUT",
+    "last_deploy_at": "2026-08-22T01:36:26Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "In Motu just went down.\n\nWatchtower tried to reach it at Nov 5, 2026, 2:20 PM Central and got: fetch failed.\n\nLast deploy: 8/21/2026, 8:36:26 PM Central (github).\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/inmotu.md\n\nRepo: https://github.com/jeromydarling/inmotu",
+  "urgent": false
+}
