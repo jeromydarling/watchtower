@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Resurrectio",
+    "slug": "resurrectio",
+    "repo": "jeromydarling/resurrectio-3d07f98c",
+    "health_url": "https://resurrectio.life",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "resurrectio",
+    "name": "Resurrectio",
+    "status": "down",
+    "http_status": 500,
+    "latency_ms": 6608,
+    "checks": {},
+    "version": null,
+    "error": "HTTP 500",
+    "checked_at": "2026-11-07T10:00:12.718Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 68,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Resurrectio just went down.\n\nWatchtower tried to reach it at Nov 7, 2026, 4:00 AM Central and got: HTTP 500.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/resurrectio.md\n\nRepo: https://github.com/jeromydarling/resurrectio-3d07f98c",
+  "urgent": false
+}
