@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Cor Mundum",
+    "slug": "cormundum",
+    "repo": "jeromydarling/cormundum",
+    "health_url": "https://cormundum.lovable.app",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "cormundum",
+    "name": "Cor Mundum",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 4880,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-11-08T12:15:34.368Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 61,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Cor Mundum is back up as of Nov 8, 2026, 6:15 AM Central. No action needed.",
+  "urgent": false
+}
