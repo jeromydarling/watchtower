@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Transit OS",
+    "slug": "transit",
+    "repo": "jeromydarling/transit-os",
+    "health_url": "https://transit-os.app",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "transit",
+    "name": "Transit OS",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 2359,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-11-10T17:21:12.177Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 64,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Transit OS is back up as of Nov 10, 2026, 11:21 AM Central. No action needed.",
+  "urgent": false
+}

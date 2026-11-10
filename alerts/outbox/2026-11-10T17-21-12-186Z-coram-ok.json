@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Coram",
+    "slug": "coram",
+    "repo": "jeromydarling/coram",
+    "health_url": "https://coram.jer-f84.workers.dev",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "coram",
+    "name": "Coram",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 2558,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-11-10T17:21:12.186Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 77,
+    "ssl_issuer": "Let's Encrypt",
+    "ssl_error": null,
+    "last_deploy_at": "2026-07-30T16:47:10Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "Coram is back up as of Nov 10, 2026, 11:21 AM Central. No action needed.",
+  "urgent": false
+}

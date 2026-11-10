@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Auxilium",
+    "slug": "auxilium",
+    "repo": "jeromydarling/auxilium",
+    "health_url": "https://auxiliumos.com",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "auxilium",
+    "name": "Auxilium",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 2516,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-11-10T17:21:12.198Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 43,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": "2026-10-10T14:28:23Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "Auxilium is back up as of Nov 10, 2026, 11:21 AM Central. No action needed.",
+  "urgent": false
+}
