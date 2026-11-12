@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Verto",
+    "slug": "verto",
+    "repo": "jeromydarling/rezene",
+    "health_url": "https://verto.jer-f84.workers.dev",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "verto",
+    "name": "Verto",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 1234,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-11-12T22:22:02.294Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 75,
+    "ssl_issuer": "Let's Encrypt",
+    "ssl_error": null,
+    "last_deploy_at": "2026-11-04T23:12:24Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "Verto is back up as of Nov 12, 2026, 4:22 PM Central. No action needed.",
+  "urgent": false
+}

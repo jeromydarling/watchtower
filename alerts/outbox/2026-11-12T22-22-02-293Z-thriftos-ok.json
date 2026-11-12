@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "ThriftOS",
+    "slug": "thriftos",
+    "repo": "jeromydarling/thriftos",
+    "health_url": "https://thriftos.jer-f84.workers.dev",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "thriftos",
+    "name": "ThriftOS",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 1055,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-11-12T22:22:02.293Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 75,
+    "ssl_issuer": "Let's Encrypt",
+    "ssl_error": null,
+    "last_deploy_at": "2026-09-10T15:47:49Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "ThriftOS is back up as of Nov 12, 2026, 4:22 PM Central. No action needed.",
+  "urgent": false
+}
