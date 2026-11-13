@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Transitus",
+    "slug": "transitus",
+    "repo": "jeromydarling/transitus-be0eceba",
+    "health_url": "https://transitus.life",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "transitus",
+    "name": "Transitus",
+    "status": "down",
+    "http_status": 500,
+    "latency_ms": 5112,
+    "checks": {},
+    "version": null,
+    "error": "HTTP 500",
+    "checked_at": "2026-11-13T11:42:13.525Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 63,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Transitus just went down.\n\nWatchtower tried to reach it at Nov 13, 2026, 5:42 AM Central and got: HTTP 500.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/transitus.md\n\nRepo: https://github.com/jeromydarling/transitus-be0eceba",
+  "urgent": false
+}
