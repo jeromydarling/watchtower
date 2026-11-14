@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:46:08.883Z",
+  "generated_at": "2026-11-14T23:54:59.936Z",
   "projects": [
     {
       "name": "Communis",
@@ -9,9 +9,9 @@
       "health_url": "https://communis.group",
       "current": {
         "status": "ok",
-        "latency_ms": 763,
+        "latency_ms": 614,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.186Z",
+        "checked_at": "2026-11-14T23:54:53.021Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -39,9 +39,9 @@
       "health_url": "https://dominiumapp.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 767,
+        "latency_ms": 547,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.197Z",
+        "checked_at": "2026-11-14T23:54:53.036Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -69,16 +69,16 @@
       "health_url": "https://successio.jer-f84.workers.dev",
       "current": {
         "status": "ok",
-        "latency_ms": 1220,
+        "latency_ms": 1287,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.199Z",
+        "checked_at": "2026-11-14T23:54:53.038Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 72,
         "ssl_issuer": "Let's Encrypt",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-10-13T20:41:45Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -99,9 +99,9 @@
       "health_url": "https://thefabrica.app",
       "current": {
         "status": "ok",
-        "latency_ms": 743,
+        "latency_ms": 658,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.202Z",
+        "checked_at": "2026-11-14T23:54:53.042Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -129,16 +129,16 @@
       "health_url": "https://culina.life",
       "current": {
         "status": "ok",
-        "latency_ms": 428,
+        "latency_ms": 669,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.203Z",
+        "checked_at": "2026-11-14T23:54:53.044Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 43,
         "ssl_issuer": "Google Trust Services",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-08-21T21:38:54Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -159,16 +159,16 @@
       "health_url": "https://thriftos.jer-f84.workers.dev",
       "current": {
         "status": "ok",
-        "latency_ms": 732,
+        "latency_ms": 811,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.205Z",
+        "checked_at": "2026-11-14T23:54:53.046Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 72,
         "ssl_issuer": "Let's Encrypt",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-09-10T15:47:49Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -189,16 +189,16 @@
       "health_url": "https://verto.jer-f84.workers.dev",
       "current": {
         "status": "ok",
-        "latency_ms": 847,
+        "latency_ms": 1115,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.207Z",
+        "checked_at": "2026-11-14T23:54:53.048Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 72,
         "ssl_issuer": "Let's Encrypt",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-11-04T23:12:24Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -219,16 +219,16 @@
       "health_url": "https://godirectio.com",
       "current": {
         "status": "ok",
-        "latency_ms": 1343,
+        "latency_ms": 1021,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.208Z",
+        "checked_at": "2026-11-14T23:54:53.049Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 38,
         "ssl_issuer": "Google Trust Services",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-09-21T03:38:54Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -249,9 +249,9 @@
       "health_url": "https://fairwayos.golf",
       "current": {
         "status": "ok",
-        "latency_ms": 649,
+        "latency_ms": 1017,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.209Z",
+        "checked_at": "2026-11-14T23:54:53.051Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -279,9 +279,9 @@
       "health_url": "https://stabilitas.jer-f84.workers.dev",
       "current": {
         "status": "ok",
-        "latency_ms": 591,
+        "latency_ms": 966,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.210Z",
+        "checked_at": "2026-11-14T23:54:53.052Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -309,9 +309,9 @@
       "health_url": "https://propria.land",
       "current": {
         "status": "ok",
-        "latency_ms": 1160,
+        "latency_ms": 1351,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.211Z",
+        "checked_at": "2026-11-14T23:54:53.054Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -339,9 +339,9 @@
       "health_url": "https://theviapublica.app",
       "current": {
         "status": "ok",
-        "latency_ms": 1230,
+        "latency_ms": 1408,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.212Z",
+        "checked_at": "2026-11-14T23:54:53.055Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -369,9 +369,9 @@
       "health_url": "https://transitus.life",
       "current": {
         "status": "ok",
-        "latency_ms": 1252,
+        "latency_ms": 1725,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.214Z",
+        "checked_at": "2026-11-14T23:54:53.056Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -399,9 +399,9 @@
       "health_url": "https://custodia.land",
       "current": {
         "status": "ok",
-        "latency_ms": 2447,
+        "latency_ms": 3728,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.215Z",
+        "checked_at": "2026-11-14T23:54:53.057Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -429,16 +429,16 @@
       "health_url": "https://sanctum.garden",
       "current": {
         "status": "ok",
-        "latency_ms": 1553,
+        "latency_ms": 1642,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.216Z",
+        "checked_at": "2026-11-14T23:54:53.059Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 43,
         "ssl_issuer": "Google Trust Services",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-08-22T04:30:49Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -459,9 +459,9 @@
       "health_url": "https://refugium.life",
       "current": {
         "status": "ok",
-        "latency_ms": 2040,
+        "latency_ms": 2055,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.218Z",
+        "checked_at": "2026-11-14T23:54:53.060Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -489,9 +489,9 @@
       "health_url": "https://transit-os.app",
       "current": {
         "status": "ok",
-        "latency_ms": 2289,
+        "latency_ms": 2511,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.219Z",
+        "checked_at": "2026-11-14T23:54:53.061Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -519,9 +519,9 @@
       "health_url": "https://haveninnernet.com",
       "current": {
         "status": "ok",
-        "latency_ms": 1629,
+        "latency_ms": 1857,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.220Z",
+        "checked_at": "2026-11-14T23:54:53.064Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -549,9 +549,9 @@
       "health_url": "https://taberna.pro",
       "current": {
         "status": "ok",
-        "latency_ms": 2014,
+        "latency_ms": 2057,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.221Z",
+        "checked_at": "2026-11-14T23:54:53.066Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -579,9 +579,9 @@
       "health_url": "https://convivium.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 2037,
+        "latency_ms": 2233,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.222Z",
+        "checked_at": "2026-11-14T23:54:53.067Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -609,16 +609,16 @@
       "health_url": "https://8s.rodeo",
       "current": {
         "status": "ok",
-        "latency_ms": 1663,
+        "latency_ms": 1959,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.223Z",
+        "checked_at": "2026-11-14T23:54:53.069Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 40,
         "ssl_issuer": "Google Trust Services",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-09-10T16:12:06Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -639,16 +639,16 @@
       "health_url": "https://inmotu.jer-f84.workers.dev",
       "current": {
         "status": "ok",
-        "latency_ms": 1711,
+        "latency_ms": 2028,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.224Z",
+        "checked_at": "2026-11-14T23:54:53.070Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 72,
         "ssl_issuer": "Let's Encrypt",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-08-22T01:36:26Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -669,9 +669,9 @@
       "health_url": "https://rehearso.app",
       "current": {
         "status": "ok",
-        "latency_ms": 2239,
+        "latency_ms": 2390,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.226Z",
+        "checked_at": "2026-11-14T23:54:53.072Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -699,16 +699,16 @@
       "health_url": "https://bushi.pro",
       "current": {
         "status": "ok",
-        "latency_ms": 1964,
+        "latency_ms": 2229,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.227Z",
+        "checked_at": "2026-11-14T23:54:53.073Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 73,
         "ssl_issuer": "Google Trust Services",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-08-21T19:42:45Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -729,16 +729,16 @@
       "health_url": "https://sodalitas.jer-f84.workers.dev",
       "current": {
         "status": "ok",
-        "latency_ms": 1916,
+        "latency_ms": 2261,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.228Z",
+        "checked_at": "2026-11-14T23:54:53.075Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 72,
         "ssl_issuer": "Let's Encrypt",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-08-12T16:14:12Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -759,16 +759,16 @@
       "health_url": "https://coram.jer-f84.workers.dev",
       "current": {
         "status": "ok",
-        "latency_ms": 1906,
+        "latency_ms": 2342,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.229Z",
+        "checked_at": "2026-11-14T23:54:53.076Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 72,
         "ssl_issuer": "Let's Encrypt",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-07-30T16:47:10Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -789,9 +789,9 @@
       "health_url": "https://hortus.life",
       "current": {
         "status": "ok",
-        "latency_ms": 2229,
+        "latency_ms": 2438,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.231Z",
+        "checked_at": "2026-11-14T23:54:53.078Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -819,16 +819,16 @@
       "health_url": "https://communicare.farm",
       "current": {
         "status": "ok",
-        "latency_ms": 2120,
+        "latency_ms": 2159,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.232Z",
+        "checked_at": "2026-11-14T23:54:53.080Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 63,
         "ssl_issuer": "Google Trust Services",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-07-27T21:25:55Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -849,16 +849,16 @@
       "health_url": "https://laevo.us",
       "current": {
         "status": "ok",
-        "latency_ms": 2233,
+        "latency_ms": 2398,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.234Z",
+        "checked_at": "2026-11-14T23:54:53.082Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 38,
         "ssl_issuer": "Google Trust Services",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-09-05T00:46:09Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -879,9 +879,9 @@
       "health_url": "https://flavordoctors.com",
       "current": {
         "status": "ok",
-        "latency_ms": 2224,
+        "latency_ms": 2289,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.235Z",
+        "checked_at": "2026-11-14T23:54:53.084Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -909,16 +909,16 @@
       "health_url": "https://auxiliumos.com",
       "current": {
         "status": "ok",
-        "latency_ms": 2312,
+        "latency_ms": 2428,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.239Z",
+        "checked_at": "2026-11-14T23:54:53.088Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 38,
         "ssl_issuer": "Google Trust Services",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-10-10T14:28:23Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -939,9 +939,9 @@
       "health_url": "https://vigilia.care",
       "current": {
         "status": "ok",
-        "latency_ms": 2752,
+        "latency_ms": 2832,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.240Z",
+        "checked_at": "2026-11-14T23:54:53.089Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -969,9 +969,9 @@
       "health_url": "https://resurrectio.life",
       "current": {
         "status": "ok",
-        "latency_ms": 2716,
+        "latency_ms": 2842,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.241Z",
+        "checked_at": "2026-11-14T23:54:53.091Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -999,9 +999,9 @@
       "health_url": "https://aequitas-os.com",
       "current": {
         "status": "ok",
-        "latency_ms": 2834,
+        "latency_ms": 3131,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.242Z",
+        "checked_at": "2026-11-14T23:54:53.092Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -1029,16 +1029,16 @@
       "health_url": "https://viatutela.jer-f84.workers.dev",
       "current": {
         "status": "ok",
-        "latency_ms": 2734,
+        "latency_ms": 3365,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.243Z",
+        "checked_at": "2026-11-14T23:54:53.094Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 72,
         "ssl_issuer": "Let's Encrypt",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-09-05T01:24:13Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -1059,9 +1059,9 @@
       "health_url": "https://theschola.app",
       "current": {
         "status": "ok",
-        "latency_ms": 2921,
+        "latency_ms": 3105,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.244Z",
+        "checked_at": "2026-11-14T23:54:53.095Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -1089,9 +1089,9 @@
       "health_url": "https://collegium.help",
       "current": {
         "status": "ok",
-        "latency_ms": 2940,
+        "latency_ms": 3677,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.245Z",
+        "checked_at": "2026-11-14T23:54:53.096Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -1119,9 +1119,9 @@
       "health_url": "https://cormundum.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 3422,
+        "latency_ms": 3742,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.246Z",
+        "checked_at": "2026-11-14T23:54:53.097Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -1149,9 +1149,9 @@
       "health_url": "https://bitoku.app",
       "current": {
         "status": "ok",
-        "latency_ms": 2940,
+        "latency_ms": 3380,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.247Z",
+        "checked_at": "2026-11-14T23:54:53.098Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -1179,9 +1179,9 @@
       "health_url": "https://vrtmethod.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 3010,
+        "latency_ms": 3431,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.248Z",
+        "checked_at": "2026-11-14T23:54:53.100Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -1209,9 +1209,9 @@
       "health_url": "https://heritagecatholic.faith",
       "current": {
         "status": "ok",
-        "latency_ms": 2597,
+        "latency_ms": 3166,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.249Z",
+        "checked_at": "2026-11-14T23:54:53.101Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -1239,9 +1239,9 @@
       "health_url": "https://commissio.dev",
       "current": {
         "status": "ok",
-        "latency_ms": 2597,
+        "latency_ms": 3156,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.250Z",
+        "checked_at": "2026-11-14T23:54:53.102Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -1269,9 +1269,9 @@
       "health_url": "https://thegreatnave.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 3049,
+        "latency_ms": 3523,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.251Z",
+        "checked_at": "2026-11-14T23:54:53.104Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -1299,9 +1299,9 @@
       "health_url": "https://heritage-history.jer-f84.workers.dev",
       "current": {
         "status": "ok",
-        "latency_ms": 2641,
+        "latency_ms": 3228,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.253Z",
+        "checked_at": "2026-11-14T23:54:53.105Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -1329,9 +1329,9 @@
       "health_url": "https://thecros.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 3490,
+        "latency_ms": 3907,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.254Z",
+        "checked_at": "2026-11-14T23:54:53.106Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
@@ -1359,16 +1359,16 @@
       "health_url": "https://heritage-kitchen-app.lovable.app",
       "current": {
         "status": "ok",
-        "latency_ms": 3403,
+        "latency_ms": 3712,
         "error": null,
-        "checked_at": "2026-11-14T23:46:03.255Z",
+        "checked_at": "2026-11-14T23:54:53.108Z",
         "checks": {},
         "version": null,
         "dns_ok": true,
         "ssl_days_until_expiry": 55,
         "ssl_issuer": "Google Trust Services",
-        "last_deploy_at": null,
-        "last_deploy_source": null
+        "last_deploy_at": "2026-05-26T15:40:26Z",
+        "last_deploy_source": "github"
       },
       "uptime": {
         "last_24h": 100,
@@ -1391,7 +1391,7 @@
         "status": "unconfigured",
         "latency_ms": null,
         "error": "No health_url configured",
-        "checked_at": "2026-11-14T23:46:03.256Z",
+        "checked_at": "2026-11-14T23:54:53.109Z",
         "checks": {},
         "version": null,
         "dns_ok": null,
