@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Tutela",
+    "slug": "tutela",
+    "repo": "jeromydarling/viatutela",
+    "health_url": "https://viatutela.jer-f84.workers.dev",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "tutela",
+    "name": "Tutela",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 10140,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-11-18T18:15:36.913Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 69,
+    "ssl_issuer": "Let's Encrypt",
+    "ssl_error": null,
+    "last_deploy_at": "2026-09-05T01:24:13Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "Tutela just went down.\n\nWatchtower tried to reach it at Nov 18, 2026, 12:15 PM Central and got: Timed out after 10s.\n\nLast deploy: 9/4/2026, 8:24:13 PM Central (github).\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/tutela.md\n\nRepo: https://github.com/jeromydarling/viatutela",
+  "urgent": false
+}
