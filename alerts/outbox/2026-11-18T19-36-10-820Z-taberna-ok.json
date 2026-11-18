@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Taberna",
+    "slug": "taberna",
+    "repo": "jeromydarling/taberna",
+    "health_url": "https://taberna.pro",
+    "critical": true
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "taberna",
+    "name": "Taberna",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 1419,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-11-18T19:36:10.820Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 74,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Taberna is back up as of Nov 18, 2026, 1:36 PM Central. No action needed.",
+  "urgent": false
+}
