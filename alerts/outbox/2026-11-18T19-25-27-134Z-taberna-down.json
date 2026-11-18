@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Taberna",
+    "slug": "taberna",
+    "repo": "jeromydarling/taberna",
+    "health_url": "https://taberna.pro",
+    "critical": true
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "taberna",
+    "name": "Taberna",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 10104,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-11-18T19:25:27.134Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 74,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Taberna just went down.\n\nWatchtower tried to reach it at Nov 18, 2026, 1:25 PM Central and got: Timed out after 10s.\n\nThis is a TIER 1 project.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/taberna.md\n\nRepo: https://github.com/jeromydarling/taberna",
+  "urgent": true
+}
