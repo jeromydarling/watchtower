@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Collegium",
+    "slug": "collegium",
+    "repo": "jeromydarling/collegium-connect",
+    "health_url": "https://collegium.help",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "collegium",
+    "name": "Collegium",
+    "status": "down",
+    "http_status": 500,
+    "latency_ms": 6898,
+    "checks": {},
+    "version": null,
+    "error": "HTTP 500",
+    "checked_at": "2026-11-23T12:42:00.380Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 52,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Collegium just went down.\n\nWatchtower tried to reach it at Nov 23, 2026, 6:42 AM Central and got: HTTP 500.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/collegium.md\n\nRepo: https://github.com/jeromydarling/collegium-connect",
+  "urgent": false
+}
