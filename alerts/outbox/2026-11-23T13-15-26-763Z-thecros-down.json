@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "CROS",
+    "slug": "thecros",
+    "repo": "jeromydarling/thecros",
+    "health_url": "https://thecros.lovable.app",
+    "critical": true
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "thecros",
+    "name": "CROS",
+    "status": "down",
+    "http_status": 500,
+    "latency_ms": 5158,
+    "checks": {},
+    "version": null,
+    "error": "HTTP 500",
+    "checked_at": "2026-11-23T13:15:26.763Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 46,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "CROS just went down.\n\nWatchtower tried to reach it at Nov 23, 2026, 7:15 AM Central and got: HTTP 500.\n\nThis is a TIER 1 project.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/thecros.md\n\nRepo: https://github.com/jeromydarling/thecros",
+  "urgent": true
+}
