@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Rehearso",
+    "slug": "rehearso",
+    "repo": "jeromydarling/rehearso",
+    "health_url": "https://rehearso.app",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "rehearso",
+    "name": "Rehearso",
+    "status": "down",
+    "http_status": 500,
+    "latency_ms": 5508,
+    "checks": {},
+    "version": null,
+    "error": "HTTP 500",
+    "checked_at": "2026-11-23T09:00:25.419Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 65,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Rehearso just went down.\n\nWatchtower tried to reach it at Nov 23, 2026, 3:00 AM Central and got: HTTP 500.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/rehearso.md\n\nRepo: https://github.com/jeromydarling/rehearso",
+  "urgent": false
+}
