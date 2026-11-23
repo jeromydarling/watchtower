@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Custodia",
+    "slug": "custodia",
+    "repo": "jeromydarling/custodia",
+    "health_url": "https://custodia.land",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "custodia",
+    "name": "Custodia",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 2412,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-11-23T01:41:09.489Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 60,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Custodia is back up as of Nov 22, 2026, 7:41 PM Central. No action needed.",
+  "urgent": false
+}
