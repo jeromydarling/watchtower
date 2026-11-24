@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Bushi",
+    "slug": "bushi",
+    "repo": "jeromydarling/bushi",
+    "health_url": "https://bushi.pro",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "bushi",
+    "name": "Bushi",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 10156,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-11-24T19:03:42.108Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 63,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": "2026-08-21T19:42:45Z",
+    "last_deploy_source": "github"
+  },
+  "narrative": "Bushi just went down.\n\nWatchtower tried to reach it at Nov 24, 2026, 1:03 PM Central and got: Timed out after 10s.\n\nLast deploy: 8/21/2026, 2:42:45 PM Central (github).\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/bushi.md\n\nRepo: https://github.com/jeromydarling/bushi",
+  "urgent": false
+}

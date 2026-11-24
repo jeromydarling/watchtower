@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Heritage History",
+    "slug": "heritagehistory",
+    "repo": "jeromydarling/heritage-history",
+    "health_url": "https://heritage-history.jer-f84.workers.dev",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "heritagehistory",
+    "name": "Heritage History",
+    "status": "down",
+    "http_status": null,
+    "latency_ms": 10116,
+    "checks": {},
+    "version": null,
+    "error": "Timed out after 10s",
+    "checked_at": "2026-11-24T19:03:42.141Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 63,
+    "ssl_issuer": "Let's Encrypt",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Heritage History just went down.\n\nWatchtower tried to reach it at Nov 24, 2026, 1:03 PM Central and got: Timed out after 10s.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/heritagehistory.md\n\nRepo: https://github.com/jeromydarling/heritage-history",
+  "urgent": false
+}
