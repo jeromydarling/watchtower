@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "The Great Nave",
+    "slug": "nave",
+    "repo": "jeromydarling/thegreatnave-49ebb963",
+    "health_url": "https://thegreatnave.lovable.app",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "nave",
+    "name": "The Great Nave",
+    "status": "down",
+    "http_status": 500,
+    "latency_ms": 6451,
+    "checks": {},
+    "version": null,
+    "error": "HTTP 500",
+    "checked_at": "2026-11-24T19:40:43.761Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 45,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "The Great Nave just went down.\n\nWatchtower tried to reach it at Nov 24, 2026, 1:40 PM Central and got: HTTP 500.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/nave.md\n\nRepo: https://github.com/jeromydarling/thegreatnave-49ebb963",
+  "urgent": false
+}
