@@ -1,0 +1,31 @@
+{
+  "kind": "incident_opened",
+  "project": {
+    "name": "Aequitas",
+    "slug": "aequitas",
+    "repo": "jeromydarling/aequitas",
+    "health_url": "https://aequitas-os.com",
+    "critical": false
+  },
+  "prev_status": "ok",
+  "current": {
+    "slug": "aequitas",
+    "name": "Aequitas",
+    "status": "down",
+    "http_status": 500,
+    "latency_ms": 6603,
+    "checks": {},
+    "version": null,
+    "error": "HTTP 500",
+    "checked_at": "2026-11-24T14:01:27.109Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 51,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Aequitas just went down.\n\nWatchtower tried to reach it at Nov 24, 2026, 8:01 AM Central and got: HTTP 500.\n\nThis project is tier 2.\n\nRunbook: https://github.com/jeromydarling/watchtower/blob/main/runbooks/aequitas.md\n\nRepo: https://github.com/jeromydarling/aequitas",
+  "urgent": false
+}
