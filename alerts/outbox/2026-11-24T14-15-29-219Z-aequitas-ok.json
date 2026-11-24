@@ -1,0 +1,31 @@
+{
+  "kind": "incident_resolved",
+  "project": {
+    "name": "Aequitas",
+    "slug": "aequitas",
+    "repo": "jeromydarling/aequitas",
+    "health_url": "https://aequitas-os.com",
+    "critical": false
+  },
+  "prev_status": "down",
+  "current": {
+    "slug": "aequitas",
+    "name": "Aequitas",
+    "status": "ok",
+    "http_status": 200,
+    "latency_ms": 3446,
+    "checks": {},
+    "version": null,
+    "error": null,
+    "checked_at": "2026-11-24T14:15:29.219Z",
+    "dns_ok": true,
+    "dns_error": null,
+    "ssl_days_until_expiry": 51,
+    "ssl_issuer": "Google Trust Services",
+    "ssl_error": null,
+    "last_deploy_at": null,
+    "last_deploy_source": null
+  },
+  "narrative": "Aequitas is back up as of Nov 24, 2026, 8:15 AM Central. No action needed.",
+  "urgent": false
+}
